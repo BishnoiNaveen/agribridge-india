@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgriBridge India | Enterprise Farm Mechanization Platform</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#9ffdd3",
+            "surface-container-low": "#eff4ff",
+            "outline": "#6e7a73",
+            "primary-fixed-dim": "#7bd8b1",
+            "surface-dim": "#cbdbf5",
+            "on-surface": "#0b1c30",
+            "on-tertiary-fixed": "#2f1500",
+            "tertiary-container": "#a05600",
+            "on-primary": "#ffffff",
+            "on-primary-fixed-variant": "#00513a",
+            "tertiary-fixed": "#ffdcc3",
+            "error-container": "#ffdad6",
+            "on-tertiary-container": "#ffe5d3",
+            "outline-variant": "#bdc9c1",
+            "primary-fixed": "#97f5cc",
+            "primary": "#005d42",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary": "#ffffff",
+            "surface-variant": "#d3e4fe",
+            "inverse-surface": "#213145",
+            "inverse-primary": "#7bd8b1",
+            "on-secondary-container": "#5c647a",
+            "tertiary-fixed-dim": "#ffb77d",
+            "surface-bright": "#f8f9ff",
+            "background": "#f8f9ff",
+            "on-secondary-fixed": "#131b2e",
+            "secondary-container": "#dae2fd",
+            "primary-container": "#047857",
+            "on-error-container": "#93000a",
+            "on-background": "#0b1c30",
+            "tertiary": "#7d4200",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-surface-variant": "#3e4943",
+            "surface-container": "#e5eeff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-fixed": "#dae2fd",
+            "error": "#ba1a1a",
+            "secondary": "#565e74",
+            "surface-container-high": "#dce9ff",
+            "on-secondary": "#ffffff",
+            "on-tertiary-fixed-variant": "#6e3900",
+            "surface": "#f8f9ff",
+            "on-error": "#ffffff",
+            "on-primary-fixed": "#002115",
+            "on-secondary-fixed-variant": "#3f465c",
+            "surface-container-highest": "#d3e4fe",
+            "surface-tint": "#006c4e"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "spacing-2xs": "0.25rem",
+            "spacing-xs": "0.5rem",
+            "spacing-sm": "0.75rem",
+            "spacing-md": "1rem",
+            "spacing-lg": "1.5rem",
+            "spacing-xl": "2rem",
+            "spacing-2xl": "3rem",
+            "spacing-3xl": "4rem",
+            "spacing-4xl": "6rem",
+            "container-max": "80rem",
+            "gutter-desktop": "1.5rem",
+            "gutter-mobile": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-lg": ["2rem", { "lineHeight": "2.5rem", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-md": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-xl-mobile": ["1.75rem", { "lineHeight": "2.25rem", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "headline-xl": ["2.5rem", { "lineHeight": "3rem", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "body-sm": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "body-md": ["1rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-lg-mobile": ["2.25rem", { "lineHeight": "2.75rem", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-md": ["1.5rem", { "lineHeight": "2rem", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-sm": ["1.25rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-lg": ["3.5rem", { "lineHeight": "4.25rem", "letterSpacing": "-0.03em", "fontWeight": "800" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .spec-glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+    }
+    .navy-glass {
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+<!-- TOP APP BAR (Shared Component Anchor) -->
+<header class="sticky top-0 z-50 bg-surface-container-lowest border-b border-outline-variant/40 shadow-sm transition-all duration-200">
+<div class="flex justify-between items-center w-full px-spacing-lg md:px-spacing-2xl max-w-container-max mx-auto h-20">
+<!-- Logo Brand Entity -->
+<div class="flex items-center gap-3">
+<img alt="AgriBridge India Logo" class="h-11 w-11 object-contain rounded-lg shadow-sm border border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu6LANElqjBov19rDK3bqC48CvUF7NUfC8uD0ZGuXJDiT2EBIV_WK85_g_2Y2puxcDMeBorch4AY1fOz8ZmW5IaiMb_gA8M4XSxfdYiu8ee-zCCLOO04t4w0ig7HmFCm_K-pjebEgdubhAndvcDP5NRPpeGX5ONJDj-FORbiU4Zosf_jZTQAd57un48G_l6OSauuGq_Lpg1_cS79rZ88eSKgRzMwNG_5QQTwdx3rCR9zioZmRvCcptdcHV7ZaWBAtJJUmvJMy_TRE"/>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm tracking-tight text-primary font-bold leading-none">AgriBridge India</span>
+<span class="text-label-sm font-label-sm text-outline tracking-wider font-semibold">ENTERPRISE MECHANIZATION</span>
+</div>
+</div>
+<!-- Navigation Links (Web Desktop) -->
+<nav class="hidden lg:flex items-center space-x-6 xl:space-x-8">
+<a class="text-on-surface hover:text-primary font-label-lg text-label-lg py-1 transition-colors" href="#solutions">Balers</a>
+<a class="text-on-surface hover:text-primary font-label-lg text-label-lg py-1 transition-colors" href="#machinery">Harvesters</a>
+<a class="text-on-surface hover:text-primary font-label-lg text-label-lg py-1 transition-colors" href="#machinery">Implements</a>
+<a class="border-b-2 border-primary text-primary font-label-lg text-label-lg py-1" href="#oem">OEM Solutions</a>
+<a class="text-on-surface hover:text-primary font-label-lg text-label-lg py-1 transition-colors" href="#network">Dealer Network</a>
+<a class="text-on-surface hover:text-primary font-label-lg text-label-lg py-1 transition-colors" href="#subsidy">Testing &amp; Subsidy</a>
+</nav>
+<!-- Action Cluster -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center justify-center px-4 py-2 border border-outline-variant text-on-surface hover:border-primary hover:text-primary font-label-lg text-label-lg rounded transition-colors duration-150" href="#booking">
+          Investor Portal
+        </a>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold rounded shadow-sm hover:shadow transition-all duration-200 active:scale-[0.98]" href="#booking">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Book Demo</span>
+</a>
+</div>
+</div>
+</header>
+<main>
+<!-- HERO SECTION -->
+<section class="relative pt-spacing-xl pb-spacing-3xl overflow-hidden bg-gradient-to-b from-surface-container-lowest via-surface-bright to-background">
+<div class="max-w-container-max mx-auto px-spacing-lg md:px-spacing-2xl">
+<!-- Trust Ribbon Pill -->
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-primary-container/10 border border-primary/25 text-primary mb-6">
+<span class="material-symbols-outlined text-primary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-label-sm font-label-sm tracking-wider uppercase">Approved Machinery Consortium &amp; Direct DBT Subsidy Compliant</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-spacing-xl items-center">
+<!-- Left Hero Copy -->
+<div class="lg:col-span-7 flex flex-col space-y-6">
+<h1 class="text-headline-xl font-headline-xl text-on-surface tracking-tight leading-tight">
+              The Gateway to India’s Farm Mechanization Market: <span class="text-primary">Scaled by Industry Leaders</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+              Commercial Scale by <strong>Pankaj Kumar Jha</strong> (Ex-Maschio Gaspardo) &amp; Technical Field Mastery by <strong>Vishnu Godara</strong> (KRONE Agriculture). Structuring large-scale OEM distribution, subsidy syndication, and high-efficiency baling fleets across 28 states.
+            </p>
+<!-- Call to Actions -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-2 px-6 py-3.5 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold rounded shadow-md hover:shadow-lg transition-all active:scale-[0.98]" href="#booking">
+<span>Book a Field Demonstration</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3.5 bg-surface-container-lowest border border-outline hover:border-primary text-on-surface font-label-lg text-label-lg font-bold rounded transition-all active:scale-[0.98]" href="#oem">
+<span class="material-symbols-outlined text-primary text-[20px]">corporate_fare</span>
+<span>Explore OEM Partnerships</span>
+</a>
+</div>
+<!-- Micro Trust Metrics -->
+<div class="pt-4 flex flex-wrap items-center gap-6 text-on-surface-variant text-label-md font-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>CFMTTI Budhni Tested</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>SMAM Direct Subsidy</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+<span>100% Pan-India Spare Parts SLA</span>
+</div>
+</div>
+</div>
+<!-- Right Hero Visual with Spec/Telemetry Card -->
+<div class="lg:col-span-5 relative">
+<div class="relative rounded-lg overflow-hidden border border-outline-variant/60 shadow-xl group">
+<img alt="Precision Agricultural Machinery at Harvest Field" class="w-full h-[440px] object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgct8yjDNu-i14bP0NJ43QAC8KexFuYCAyIe0S1GwlevPjjJLDjw9tOMTnDjNbkrYWiEyFcImOGPVXt2tJj0r7XZyxSrkzG-5KN89GzT9Er71PmFxZOguZXzFzgAVJQ5P_BtsRMEMOlytfIz8gjXk_oXnZcYQ0nCyMVV9y6W_xRXyUf6ZuxQn_87PkMLMdQCssgYUOrLrBhwm1qHaXOZVvuSVo_D-SyxnouO80llhHOChelRa8k9xps33xjp4xhvhgV0JeBpVoVYg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<!-- Glassmorphism Telemetry HUD -->
+<div class="absolute bottom-4 left-4 right-4 spec-glass border border-white/80 p-4 rounded-lg shadow-lg">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1.5 text-label-sm font-label-sm uppercase tracking-wider text-primary">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                    Live R&amp;D Telemetry
+                  </span>
+<span class="text-label-sm font-label-sm text-outline font-bold">Q3 Crop Trial</span>
+</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold">
+                  Punjab &amp; Haryana Trials: 99.4% Field Uptime
+                </div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+                  Verified across 480+ continuous running hours with KRONE &amp; Maschio certified baseline protocols.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- KEY PERFORMANCE STATS BAR -->
+<section class="border-y border-outline-variant/50 bg-surface-container-lowest py-8 shadow-sm">
+<div class="max-w-container-max mx-auto px-spacing-lg md:px-spacing-2xl">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+<div class="border-l-2 border-primary pl-4">
+<div class="text-headline-lg font-headline-lg text-primary font-bold tracking-tight">₹400+ Cr</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mt-1">P&amp;L Experience</div>
+<div class="text-body-sm font-body-sm text-outline mt-0.5">Across Indian Agritech &amp; Mechanization</div>
+</div>
+<div class="border-l-2 border-primary pl-4">
+<div class="text-headline-lg font-headline-lg text-on-surface font-bold tracking-tight">500+ Dealers</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mt-1">Pan-India Network</div>
+<div class="text-body-sm font-body-sm text-outline mt-0.5">Active sales &amp; service touchpoints</div>
+</div>
+<div class="border-l-2 border-primary pl-4">
+<div class="text-headline-lg font-headline-lg text-primary font-bold tracking-tight">50 to 500+</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mt-1">Baler Scale-Up</div>
+<div class="text-body-sm font-body-sm text-outline mt-0.5">Record rapid field deployments</div>
+</div>
+<div class="border-l-2 border-tertiary-container pl-4">
+<div class="text-headline-lg font-headline-lg text-on-surface font-bold tracking-tight">Budhni &amp; Hisar</div>
+<div class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mt-1">CFMTTI Certified</div>
+<div class="text-body-sm font-body-sm text-outline mt-0.5">SMAM Central Subsidy Approvals</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LEADERSHIP SPOTLIGHT SECTION -->
+<section class="py-spacing-3xl bg-surface-bright" id="leadership">
+<div class="max-w-container-max mx-auto px-spacing-lg md:px-spacing-2xl">
+<div class="max-w-3xl mb-spacing-xl">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-secondary-container/40 text-secondary text-label-sm font-label-sm uppercase tracking-wider mb-2">
+            Institutional Pedigree
+          </div>
+<h2 class="text-headline-xl font-headline-xl text-on-surface">Executive &amp; Field Leadership</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mt-2">
+            Unmatched operational track record scaling European &amp; global mechanization standards across Indian soil, bridging governance, distribution, and precision engineering.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-spacing-xl">
+<!-- Card 1: Pankaj Kumar Jha -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-lg border border-outline/30 overflow-hidden shadow-xl flex flex-col justify-between">
+<div class="p-spacing-lg">
+<div class="flex items-start gap-5">
+<img alt="Pankaj Kumar Jha - Co-Founder &amp; Managing Director" class="w-24 h-24 rounded-lg object-cover border-2 border-primary/40 shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEnCMxTZ4tidvb9ZImM5LT0rz8fKcNDqEesRsegbsAZ1__fqS_RQGE7BHza4QMhoFKHoHCEnZ8yJt96lksSDE087xjKBnbn-yALJ140RvhR-QnL5m61CUKsIUniuKpB2GE9b8-MZXFCUoZabnv2MeQZBAtP-0sVX2zm69rA_3M-YdEqhB3qOEqSd5_LxYBQyrJAZuzkYVwl-hNxy3msyzwmTScUgSYiGraEII9z-TsmcC30MEGsqvwZY1p2LF8V_XjkhB3HsDWLd4"/>
+<div>
+<div class="inline-block px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm uppercase tracking-wider">
+                    Commercial &amp; Strategy
+                  </div>
+<h3 class="text-headline-md font-headline-md text-surface font-bold mt-1">Pankaj Kumar Jha</h3>
+<p class="text-label-lg font-label-lg text-primary-fixed-dim">Co-Founder &amp; Managing Director</p>
+<p class="text-label-md font-label-md text-surface-variant mt-0.5">Ex-Commercial Head, Maschio Gaspardo</p>
+</div>
+</div>
+<!-- Pedigree Breakdown -->
+<div class="mt-6 space-y-3 pt-6 border-t border-outline/20">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px] mt-0.5">domain</span>
+<div class="text-body-sm font-body-sm text-surface-variant">
+<strong class="text-surface font-semibold">Pan-India P&amp;L Scaling:</strong> Architected 500+ dealership ecosystems delivering over ₹400 Cr in farm equipment sales.
+                  </div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px] mt-0.5">account_balance</span>
+<div class="text-body-sm font-body-sm text-surface-variant">
+<strong class="text-surface font-semibold">Subsidy &amp; Policy Navigation:</strong> Direct syndication with Central SMAM, State DBT Portals, and NABARD priority sector credit.
+                  </div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px] mt-0.5">handshake</span>
+<div class="text-body-sm font-body-sm text-surface-variant">
+<strong class="text-surface font-semibold">OEM Architecture:</strong> Bridging European equipment tier-1 manufacturing with localized tier-2/3 Indian retail finance.
+                  </div>
+</div>
+</div>
+</div>
+<div class="p-spacing-lg bg-inverse-surface/80 border-t border-outline/30 mt-4">
+<blockquote class="text-body-sm font-body-sm italic text-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">format_quote</span>
+                "Transforming Indian agribusiness through institutional scale and dealer trust."
+              </blockquote>
+</div>
+</div>
+<!-- Card 2: Vishnu Godara -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-lg border border-outline/30 overflow-hidden shadow-xl flex flex-col justify-between">
+<div class="p-spacing-lg">
+<div class="flex items-start gap-5">
+<img alt="Vishnu Godara - Co-Founder &amp; Technical Operations Director" class="w-24 h-24 rounded-lg object-cover border-2 border-primary/40 shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtdole7o2OhrjPREMMjt00qcyCV8U9GMXphdcnRKOzX0fpVqB0j2d-mNIcSVbMY3EryoGptc6Ku6rG66PCRZ_bgUO6WkO9KAyH2S8cNcwy6bTklyryY7X5ztf_Ij6j52NsaaR7I7-ajLhUkhKazSSctnXbb_pHKgb5l68rIW4kRWA9rRlb9gy_HPKlUeKf8RfcJkACQUcwzZD3qLsioK6LzaQ3SZngLPKe12z0HatPlY62HkTf_u6SmY7MQYkCGSpI0ACZbwOMjjQ"/>
+<div>
+<div class="inline-block px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary font-label-sm text-label-sm uppercase tracking-wider">
+                    Engineering &amp; Operations
+                  </div>
+<h3 class="text-headline-md font-headline-md text-surface font-bold mt-1">Vishnu Godara</h3>
+<p class="text-label-lg font-label-lg text-primary-fixed-dim">Co-Founder &amp; Technical Operations Director</p>
+<p class="text-label-md font-label-md text-surface-variant mt-0.5">Ex-Technical Specialist, KRONE Agriculture</p>
+</div>
+</div>
+<!-- Pedigree Breakdown -->
+<div class="mt-6 space-y-3 pt-6 border-t border-outline/20">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px] mt-0.5">settings_suggest</span>
+<div class="text-body-sm font-body-sm text-surface-variant">
+<strong class="text-surface font-semibold">Baler &amp; Harvester Engineering:</strong> Directed rollout of heavy round &amp; square baling equipment from 50 to 500+ units across stubble belts.
+                  </div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px] mt-0.5">verified_user</span>
+<div class="text-body-sm font-body-sm text-surface-variant">
+<strong class="text-surface font-semibold">Testing Protocol Leadership:</strong> Hands-on test compliance at CFMTTI Budhni &amp; Hisar ensuring 100% subsidy pass rates.
+                  </div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px] mt-0.5">bolt</span>
+<div class="text-body-sm font-body-sm text-surface-variant">
+<strong class="text-surface font-semibold">Preventive Telematics &amp; Service:</strong> Established 24-hour breakdown turnaround protocols and trained over 1,200 rural field technicians.
+                  </div>
+</div>
+</div>
+</div>
+<div class="p-spacing-lg bg-inverse-surface/80 border-t border-outline/30 mt-4">
+<blockquote class="text-body-sm font-body-sm italic text-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">format_quote</span>
+                "Uncompromising machinery uptime is the true backbone of farm profitability."
+              </blockquote>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MACHINERY & OEM SOLUTIONS SHOWCASE -->
+<section class="py-spacing-3xl bg-surface-container-lowest border-y border-outline-variant/30" id="machinery">
+<div class="max-w-container-max mx-auto px-spacing-lg md:px-spacing-2xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-spacing-xl">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-primary-container/10 border border-primary/20 text-primary text-label-sm font-label-sm uppercase tracking-wider mb-2">
+              Government DBT Eligible Fleet
+            </div>
+<h2 class="text-headline-xl font-headline-xl text-on-surface">Machinery &amp; OEM Solutions Portfolio</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">High-output commercial equipment pre-calibrated for Indian agro-climatic zones and soil densities.</p>
+</div>
+<div class="mt-4 md:mt-0">
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-tertiary-container/10 border border-tertiary/30 text-tertiary font-label-sm text-label-sm font-bold uppercase">
+<span class="material-symbols-outlined text-[16px]">redeem</span>
+              Subsidies up to 50% via SMAM &amp; State Farm Schemes
+            </span>
+</div>
+</div>
+<!-- Machinery Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-spacing-lg">
+<!-- Highlighted Card: Round & Square Balers (Col 7) -->
+<div class="lg:col-span-7 bg-background border border-outline-variant/60 rounded-lg overflow-hidden shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="relative">
+<img alt="High-Density Round &amp; Square Balers for Agricultural Biomass" class="w-full h-64 sm:h-72 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpCoew6GDHe1QrRFcsts1hKbomuHgHpBpP7L8JhCseACqTPMR9WJrdQSF8-lv8w76R3nXgjtc8tmLEU9GYmr0A856wUKsdYLviRHBqR29SmrHVLY_QrRuv0hWzXI9ZQITnZS_y9Z72HR1aABAKop_x_o64AzqLI1THk_4-tK_BuzpS1nXaAsPXwNzWRRoFjoWF2iC-gyBCFUJU0NaIaSoRlTFweENoKD7lO0UEU482jfM-GgDkMLk8f3gmyliAt3rlIoBdbRVeH-4"/>
+<div class="absolute top-4 left-4">
+<span class="px-2.5 py-1 bg-primary text-on-primary rounded text-label-sm font-label-sm font-bold uppercase">Commercial Flagship</span>
+</div>
+<div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur px-3 py-1 rounded text-on-surface text-label-md font-label-md font-semibold border border-outline-variant">
+                CR-Series Heavy Density
+              </div>
+</div>
+<div class="p-spacing-lg">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-headline-md font-headline-md text-on-surface font-bold">High-Density Round &amp; Square Balers</h3>
+<span class="text-label-md font-label-md text-primary font-bold">SMAM DBT Code: BL-900</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">
+                Engineered specifically for paddy stubble consolidation, bio-energy pellet plants, and commercial fodder logistics. Field-proven during high-intensity 30-day North Indian harvest windows.
+              </p>
+<!-- Spec Matrix -->
+<div class="grid grid-cols-3 gap-3 p-3 bg-surface-container-low rounded border border-outline-variant/40 mb-5">
+<div>
+<div class="text-label-sm font-label-sm text-outline uppercase">Tractor Power</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold">120 - 180 HP</div>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-outline uppercase">Output Capacity</div>
+<div class="text-headline-sm font-headline-sm text-primary font-bold">80 - 120 B/Hr</div>
+</div>
+<div>
+<div class="text-label-sm font-label-sm text-outline uppercase">Subsidy Cover</div>
+<div class="text-headline-sm font-headline-sm text-tertiary font-bold">Up to 50%</div>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<span class="text-label-sm font-label-sm text-outline uppercase block">Indicative Fleet Cost</span>
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">Institutional Lease / Direct DBT</span>
+</div>
+<div class="flex gap-2">
+<a class="px-4 py-2 border border-outline-variant hover:border-primary text-on-surface text-label-md font-label-md rounded font-semibold transition-colors" href="#booking">Inspect Specs</a>
+<a class="px-4 py-2 bg-primary hover:bg-primary-container text-on-primary text-label-md font-label-md rounded font-semibold shadow-sm transition-all" href="#booking">Procure / Syndicate</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Vertical Stack for Remaining Solutions (Col 5) -->
+<div class="lg:col-span-5 flex flex-col gap-spacing-lg">
+<!-- Card 2: Grain & Fodder Harvester Combines -->
+<div class="bg-background border border-outline-variant/60 rounded-lg p-spacing-lg flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm text-primary uppercase font-bold tracking-wider">Multi-Crop Harvester</span>
+<span class="material-symbols-outlined text-outline">agriculture</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Grain &amp; Fodder Harvester Combines</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 mb-4">
+                  Track and wheeled chassis options equipped with precision straw spreaders to facilitate immediate zero-tillage seeding.
+                </p>
+<div class="grid grid-cols-2 gap-2 text-label-md font-label-md text-on-surface-variant mb-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>101 HP Tier-IV Engine</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>2.5 to 3.2 Acre/Hr</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>Straw Management System</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>Telematics-Ready</span>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="text-label-md font-label-md font-bold text-outline">CFMTTI Tested #H-894</span>
+<a class="text-primary hover:text-primary-container font-label-md text-label-md font-bold inline-flex items-center gap-1" href="#booking">
+<span>Explore Combines</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Card 3: Heavy Rotary Implements & Mulchers -->
+<div class="bg-background border border-outline-variant/60 rounded-lg p-spacing-lg flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-sm font-label-sm text-tertiary uppercase font-bold tracking-wider">Tillage &amp; Residue</span>
+<span class="material-symbols-outlined text-outline">precision_manufacturing</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold">Heavy Rotary Implements &amp; Mulchers</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 mb-4">
+                  Heavy-duty Boron steel gearboxes built for rigorous crop stubble incorporation and deep soil aeration across clay and alluvial plains.
+                </p>
+<div class="grid grid-cols-2 gap-2 text-label-md font-label-md text-on-surface-variant mb-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>55 to 110 HP Rated</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>Dual Side Gear Drive</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>Subsoiler &amp; Mulcher Ready</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[16px]">done</span>
+<span>Govt Approved Specs</span>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="text-label-md font-label-md font-bold text-outline">State Subsidy Verified</span>
+<a class="text-primary hover:text-primary-container font-label-md text-label-md font-bold inline-flex items-center gap-1" href="#booking">
+<span>Explore Implements</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- OEM ARCHITECTURE & SYNDICATION SECTION -->
+<section class="py-spacing-3xl bg-surface-container-low" id="oem">
+<div class="max-w-container-max mx-auto px-spacing-lg md:px-spacing-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-spacing-xl items-center">
+<div class="lg:col-span-5">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary font-bold">Consortium Ecosystem</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mt-2 mb-4">
+              Turnkey Distribution Architecture for Machinery OEMs
+            </h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6 leading-relaxed">
+              Global and domestic implement manufacturers face steep friction entering India’s decentralized state subsidy frameworks. AgriBridge provides full-stack institutional representation: from test testing compliance at CFMTTI to active tier-2/3 dealer channel syndication.
+            </p>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary mt-1">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-semibold text-base">Regulatory &amp; Testing Stewardship</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Navigating Budhni, Hisar, Anantapur testing mandates and documentation for central registry inclusion.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary mt-1">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-semibold text-base">500+ Dealer Network Activation</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Immediate access to trusted rural machinery dealers with pre-vetted credit lines and dedicated workshop space.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary mt-1">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface font-semibold text-base">Financing &amp; DBT Syndication</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Structured equipment leasing with public sector banks and primary agriculture credit societies (PACS).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<!-- Strategic Process Workflow Grid -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-lg p-spacing-xl shadow-md">
+<h3 class="text-headline-md font-headline-md text-on-surface font-bold mb-6">OEM Market Launch Runway</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-4 rounded border border-outline-variant/40 bg-surface-bright">
+<div class="text-label-sm font-label-sm text-primary font-bold">PHASE 01</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold mt-1">Institutional Filing</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+                    Commercial homologation, tractor PTO pairing specifications, and CFMTTI testing coordination.
+                  </p>
+</div>
+<div class="p-4 rounded border border-outline-variant/40 bg-surface-bright">
+<div class="text-label-sm font-label-sm text-primary font-bold">PHASE 02</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold mt-1">Territory Allocation</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+                    Strategic deployment into high-density belts across Punjab, Haryana, UP, MP, and Rajasthan.
+                  </p>
+</div>
+<div class="p-4 rounded border border-outline-variant/40 bg-surface-bright">
+<div class="text-label-sm font-label-sm text-primary font-bold">PHASE 03</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold mt-1">Service &amp; Telemetry SLA</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+                    Preventive field servicing, spare parts stocking hubs, and certified mechanic network deployments.
+                  </p>
+</div>
+<div class="p-4 rounded border border-outline-variant/40 bg-surface-bright">
+<div class="text-label-sm font-label-sm text-primary font-bold">PHASE 04</div>
+<div class="text-headline-sm font-headline-sm text-on-surface font-bold mt-1">Direct DBT Realization</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-2">
+                    Seamless customer subsidy disbursement via Central SMAM and state portal compliance tracking.
+                  </p>
+</div>
+</div>
+<div class="mt-6 p-4 rounded bg-surface-container flex items-center justify-between">
+<div>
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface">Interested in OEM Syndication?</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant block">Connect with our Executive Managing Director directly.</span>
+</div>
+<a class="px-4 py-2 bg-on-surface text-surface rounded text-label-md font-label-md font-semibold hover:bg-inverse-surface transition-colors" href="#booking">Schedule OEM Session</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE FIELD DEMONSTRATION & DEALER BOOKING HUB -->
+<section class="py-spacing-3xl bg-background" id="booking">
+<div class="max-w-container-max mx-auto px-spacing-lg md:px-spacing-2xl">
+<div class="text-center max-w-2xl mx-auto mb-spacing-xl">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary font-bold">Direct Operational Engagement</span>
+<h2 class="text-headline-xl font-headline-xl text-on-surface mt-1">Field Demonstration &amp; Dealership Hub</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-2">
+            Schedule on-ground tractor testing at your farm acreage or register as an authorized district machinery dealer.
+          </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-spacing-xl">
+<!-- Booking / Franchise Interactive Module (Col 8) -->
+<div class="lg:col-span-8 bg-surface-container-lowest border border-outline-variant/60 rounded-lg shadow-lg overflow-hidden">
+<!-- Segmented Navigation Controls -->
+<div class="flex border-b border-outline-variant/40 bg-surface-bright">
+<button class="flex-1 py-4 px-6 text-center font-label-lg text-label-lg font-bold border-b-2 border-primary text-primary transition-colors flex items-center justify-center gap-2" id="tabDemoBtn" onclick="switchBookingTab('demo')">
+<span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+<span>Schedule Field Demonstration</span>
+</button>
+<button class="flex-1 py-4 px-6 text-center font-label-lg text-label-lg font-bold border-b-2 border-transparent text-outline hover:text-on-surface transition-colors flex items-center justify-center gap-2" id="tabDealerBtn" onclick="switchBookingTab('dealer')">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<span>Apply for Dealership Franchise</span>
+</button>
+</div>
+<!-- Tab Content: Field Demo -->
+<div class="p-spacing-xl" id="tabDemoContent">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Demo request submitted. An AgriBridge technical engineer will contact you within 4 hours.');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Equipment Category / Model *</label>
+<select class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm">
+<option>CR-800 High Density Round Baler</option>
+<option>CR-1200 Square Baler Heavy Duty</option>
+<option>Multi-Crop Track Combine Harvester</option>
+<option>Heavy Rotary Mulcher (Boron Steel)</option>
+<option>Laser Guided Land Leveler</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Operational State &amp; Region *</label>
+<select class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm">
+<option>Punjab (Ludhiana, Sangrur, Bhatinda)</option>
+<option>Haryana (Karnal, Hisar, Sirsa)</option>
+<option>Uttar Pradesh (Meerut, Bareilly, Lakhimpur)</option>
+<option>Rajasthan (Ganganagar, Kota, Hanumangarh)</option>
+<option>Madhya Pradesh (Indore, Ujjain, Hoshangabad)</option>
+<option>Other / FPO Territory</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Farm Acreage / Cluster *</label>
+<input class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm" placeholder="e.g. 50-200 Acres" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Preferred Date *</label>
+<input class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm" type="date"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Tractor HP Available *</label>
+<input class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm" placeholder="e.g. 65 HP, 75 HP, 90 HP" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Contact Person / FPO Name *</label>
+<input class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm" placeholder="Full legal name" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Direct Mobile Number (WhatsApp) *</label>
+<input class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm" placeholder="+91 98765 43210" type="tel"/>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-3.5 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold rounded shadow transition-all active:scale-[0.99] flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span>Confirm Field Demo Dispatch</span>
+</button>
+<p class="text-label-sm font-label-sm text-outline text-center mt-2">
+                    Zero demonstration charges. Dedicated telematics specialist will confirm logistics prior to arrival.
+                  </p>
+</div>
+</form>
+</div>
+<!-- Tab Content: Dealership Franchise (Hidden by default) -->
+<div class="p-spacing-xl hidden" id="tabDealerContent">
+<form class="space-y-4" onsubmit="event.preventDefault(); alert('Franchise inquiry submitted. Our Dealer Development Directorate will initiate contact.');">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Enterprise / Dealership Legal Name *</label>
+<input class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm" placeholder="e.g. Kisan Agro Machinery Pvt Ltd" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Territory / District of Interest *</label>
+<input class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm" placeholder="e.g. Bhatinda &amp; Mansa District, Punjab" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Existing Showroom / Workshop Facility *</label>
+<select class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm">
+<option>Dedicated 3S Facility (&gt; 5,000 sq ft)</option>
+<option>Tractor Dealership with Workshop</option>
+<option>Independent Implement Showroom</option>
+<option>Greenfield Investment Planned</option>
+</select>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Planned Working Capital Investment *</label>
+<select class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm">
+<option>₹50 Lakhs - ₹1 Crore</option>
+<option>₹1 Crore - ₹2.5 Crores</option>
+<option>₹2.5 Crores - ₹5 Crores+</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Managing Director / Proprietor Name *</label>
+<input class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm" placeholder="Full name" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface font-semibold mb-1">Official Mobile / Email *</label>
+<input class="w-full h-11 px-3 border border-outline-variant rounded bg-surface-container-lowest text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-body-sm font-body-sm" placeholder="+91 Contact &amp; Email address" type="text"/>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-3.5 bg-inverse-surface hover:bg-on-surface text-surface font-label-lg text-label-lg font-bold rounded shadow transition-all active:scale-[0.99] flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+<span>Submit Dealership Application</span>
+</button>
+<p class="text-label-sm font-label-sm text-outline text-center mt-2">
+                    Direct access to ₹400+ Cr syndicate pipeline and territorial exclusivity clauses.
+                  </p>
+</div>
+</form>
+</div>
+</div>
+<!-- Direct Liaison & Hotline Card (Col 4) -->
+<div class="lg:col-span-4 flex flex-col justify-between space-y-6">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-lg p-spacing-xl border border-outline/30 shadow-md">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-primary-fixed-dim font-bold">Institutional Liaison</span>
+<h3 class="text-headline-md font-headline-md text-surface font-bold mt-1">Corporate &amp; OEM Inquiries</h3>
+<p class="text-body-sm font-body-sm text-surface-variant mt-2 leading-relaxed">
+                Direct channel for agricultural ministries, international tractor brands, large-scale custom hiring centers (CHCs), and bio-power plant biomass consortia.
+              </p>
+<div class="mt-6 pt-6 border-t border-outline/30 space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim">call</span>
+<div>
+<div class="text-label-sm font-label-sm text-surface-variant uppercase">Direct Mechanization Hotline</div>
+<div class="text-body-md font-body-md text-surface font-bold">+91 (011) 4982-AGRI / +91 98110 54321</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim">mail</span>
+<div>
+<div class="text-label-sm font-label-sm text-surface-variant uppercase">Executive Directorate</div>
+<div class="text-body-md font-body-md text-surface font-bold">directors@agribridgeindia.com</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim">location_on</span>
+<div>
+<div class="text-label-sm font-label-sm text-surface-variant uppercase">Central Directorate</div>
+<div class="text-body-sm font-body-sm text-surface">Aerocity Corporate Hub, New Delhi &amp; Field R&amp;D Camp, Karnal, Haryana</div>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<div class="p-3 bg-surface-container-lowest/10 rounded border border-outline/20">
+<div class="text-label-sm font-label-sm text-primary-fixed-dim font-semibold">Priority Support Window</div>
+<div class="text-body-sm font-body-sm text-surface-variant">Active 24/7 during Kharif &amp; Rabi harvest peak cycles for rapid field replacement parts.</div>
+</div>
+</div>
+</div>
+<!-- NABARD & Banking Badge Card -->
+<div class="p-4 rounded-lg bg-primary-container/10 border border-primary/30 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-[36px]" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-surface text-base font-bold">Institutional Financing Syndicated</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Low-interest agricultural term loans structured via SBI, PNB &amp; NABARD accredited rural banks.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INSTITUTIONAL TRUST & TESTING ACCREDITATIONS -->
+<section class="py-spacing-2xl bg-surface-container-lowest border-t border-outline-variant/30" id="subsidy">
+<div class="max-w-container-max mx-auto px-spacing-lg md:px-spacing-2xl">
+<div class="text-center mb-8">
+<span class="text-label-sm font-label-sm uppercase tracking-wider text-outline font-bold">Regulatory Compliance &amp; Verification</span>
+<h3 class="text-headline-md font-headline-md text-on-surface font-bold mt-1">National Machinery Testing &amp; Subsidy Accreditation</h3>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4 items-center">
+<div class="p-4 rounded border border-outline-variant/40 bg-surface-bright text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-[32px] mb-2">verified</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">CFMTTI Budhni</span>
+<span class="text-label-sm font-label-sm text-outline">Central Farm Machinery Testing</span>
+</div>
+<div class="p-4 rounded border border-outline-variant/40 bg-surface-bright text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-[32px] mb-2">task_alt</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">NRFMTTI Hisar</span>
+<span class="text-label-sm font-label-sm text-outline">Northern Region Validation</span>
+</div>
+<div class="p-4 rounded border border-outline-variant/40 bg-surface-bright text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-[32px] mb-2">policy</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">SMAM Direct Subsidy</span>
+<span class="text-label-sm font-label-sm text-outline">Sub-Mission on Agri Mechanization</span>
+</div>
+<div class="p-4 rounded border border-outline-variant/40 bg-surface-bright text-center flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-[32px] mb-2">account_balance</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">NABARD Syndication</span>
+<span class="text-label-sm font-label-sm text-outline">Refinance Framework</span>
+</div>
+<div class="p-4 rounded border border-outline-variant/40 bg-surface-bright text-center flex flex-col items-center col-span-2 md:col-span-1">
+<span class="material-symbols-outlined text-tertiary text-[32px] mb-2">precision_manufacturing</span>
+<span class="text-headline-sm font-headline-sm text-on-surface font-bold text-sm">Make in India</span>
+<span class="text-label-sm font-label-sm text-outline">Aatmanirbhar Farm Tech</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- CORPORATE FOOTER (Shared Component Anchor) -->
+<footer class="bg-inverse-surface border-t border-outline/30 text-surface-variant w-full">
+<div class="w-full px-spacing-lg md:px-spacing-2xl py-spacing-2xl max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-spacing-xl mb-spacing-xl">
+<!-- Brand Narrative & Directorate -->
+<div class="md:col-span-5 space-y-4">
+<div class="flex items-center gap-3">
+<img alt="AgriBridge India Logo" class="h-10 w-10 object-contain rounded bg-surface-container-lowest p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu6LANElqjBov19rDK3bqC48CvUF7NUfC8uD0ZGuXJDiT2EBIV_WK85_g_2Y2puxcDMeBorch4AY1fOz8ZmW5IaiMb_gA8M4XSxfdYiu8ee-zCCLOO04t4w0ig7HmFCm_K-pjebEgdubhAndvcDP5NRPpeGX5ONJDj-FORbiU4Zosf_jZTQAd57un48G_l6OSauuGq_Lpg1_cS79rZ88eSKgRzMwNG_5QQTwdx3rCR9zioZmRvCcptdcHV7ZaWBAtJJUmvJMy_TRE"/>
+<span class="text-headline-md font-headline-md tracking-tight text-surface font-bold">AgriBridge India</span>
+</div>
+<p class="text-body-sm font-body-sm text-surface-variant max-w-md leading-relaxed">
+            Consortium platform bridging global agricultural equipment manufacturers with Indian dealership networks, banking syndicates, and sovereign farm subsidy programs. Led by Pankaj Kumar Jha &amp; Vishnu Godara.
+          </p>
+<div class="flex items-center gap-3 text-surface">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm px-2.5 py-1 bg-surface-container-lowest/10 rounded">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+              ISO 9001:2015 Mechanization Protocols
+            </span>
+</div>
+</div>
+<!-- Links Columns -->
+<div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6">
+<div>
+<div class="text-headline-sm font-headline-sm text-surface text-sm font-bold mb-3">Enterprise Machinery</div>
+<ul class="space-y-2">
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#machinery">High-Density Balers</a></li>
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#machinery">Harvester Combines</a></li>
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#machinery">Rotary Mulchers</a></li>
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#machinery">Mechanization Directory</a></li>
+</ul>
+</div>
+<div>
+<div class="text-headline-sm font-headline-sm text-surface text-sm font-bold mb-3">Governance &amp; Subsidy</div>
+<ul class="space-y-2">
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#subsidy">Subsidies &amp; DBT Portal</a></li>
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#subsidy">CFMTTI Budhni Reports</a></li>
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#subsidy">ISO &amp; Testing Reports</a></li>
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#subsidy">Institutional Governance</a></li>
+</ul>
+</div>
+<div>
+<div class="text-headline-sm font-headline-sm text-surface text-sm font-bold mb-3">Partnerships &amp; Legal</div>
+<ul class="space-y-2">
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#oem">OEM Fleet Syndication</a></li>
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#booking">Dealership Registry</a></li>
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#booking">Terms of Equipment Lease</a></li>
+<li><a class="text-surface-variant hover:text-inverse-primary font-label-sm text-label-sm transition-colors" href="#booking">Privacy Architecture</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Bottom Horizontal Legal & Copyright Strip -->
+<div class="pt-spacing-lg border-t border-outline/20 flex flex-col sm:flex-row items-center justify-between text-body-sm font-body-sm text-surface-variant gap-4">
+<div>
+          © 2025 AgriBridge Mechanization India Consortium Ltd. Approved by Department of Agriculture &amp; NABARD syndicated.
+        </div>
+<div class="flex items-center space-x-4">
+<a class="text-surface-variant hover:text-inverse-primary text-label-sm font-label-sm transition-colors" href="#">Terms of Equipment Lease</a>
+<span>•</span>
+<a class="text-surface-variant hover:text-inverse-primary text-label-sm font-label-sm transition-colors" href="#">Privacy Architecture</a>
+<span>•</span>
+<a class="text-surface-variant hover:text-inverse-primary text-label-sm font-label-sm transition-colors" href="#">National Portal</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Inline Tab Switcher Logic -->
+<script>
+    function switchBookingTab(tab) {
+      const demoBtn = document.getElementById('tabDemoBtn');
+      const dealerBtn = document.getElementById('tabDealerBtn');
+      const demoContent = document.getElementById('tabDemoContent');
+      const dealerContent = document.getElementById('tabDealerContent');
+
+      if (tab === 'demo') {
+        demoBtn.className = "flex-1 py-4 px-6 text-center font-label-lg text-label-lg font-bold border-b-2 border-primary text-primary transition-colors flex items-center justify-center gap-2";
+        dealerBtn.className = "flex-1 py-4 px-6 text-center font-label-lg text-label-lg font-bold border-b-2 border-transparent text-outline hover:text-on-surface transition-colors flex items-center justify-center gap-2";
+        demoContent.classList.remove('hidden');
+        dealerContent.classList.add('hidden');
+      } else {
+        dealerBtn.className = "flex-1 py-4 px-6 text-center font-label-lg text-label-lg font-bold border-b-2 border-primary text-primary transition-colors flex items-center justify-center gap-2";
+        demoBtn.className = "flex-1 py-4 px-6 text-center font-label-lg text-label-lg font-bold border-b-2 border-transparent text-outline hover:text-on-surface transition-colors flex items-center justify-center gap-2";
+        dealerContent.classList.remove('hidden');
+        demoContent.classList.add('hidden');
+      }
+    }
+  </script>
+</body></html>
