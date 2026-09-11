@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgriBridge India | 4K High-Tech Farm Machinery & Clean Biofuel Gateway</title>
-  <meta name="description" content="Commercial Scale by Pankaj Kumar Jha & Field Engineering by Vishnu Godara. 4K High-Tech Farm Machinery, Stubble Balers, and 2G Clean Biofuel Infrastructure." />
+  <title>AgriBridge India | High-Tech Agricultural Machinery & Clean Biofuel Gateway</title>
+  <meta name="description" content="Commercial Scale by Pankaj Kumar Jha & Technical Operations by Vishnu Godara. High-density balers, biomass logistics, and 2G Biofuel infrastructure." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌾</text></svg>">
 
   <!-- Typography & Icons -->
@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
-  <!-- Tailwind CSS Engine -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -28,14 +28,14 @@
               400: '#4ADE80',
               500: '#22C55E',
               600: '#16A34A',
-              700: '#047857',
+              700: '#047857', // Forest AgTech Emerald
               800: '#065F46',
               900: '#064E3B'
             },
             amber: {
               soft: '#FEF3C7',
               warm: '#F59E0B',
-              gold: '#D97706',
+              gold: '#D97706', // Harvest Wheat Amber
               dark: '#92400E'
             },
             surface: {
@@ -74,10 +74,12 @@
       background: #047857;
       border-radius: 4px;
     }
-    .hud-glass {
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.03);
     }
     .light-bezel {
       background: #FFFFFF;
@@ -90,160 +92,131 @@
 <body class="font-sans antialiased text-surface-textPrimary">
 
   <!-- ========================================================================= -->
-  <!-- 1. 4K ULTRA-HD CINEMATIC SCROLLYTELLING INTRO & VIDEO EXPERIENCE           -->
+  <!-- 1. LUXURY SCROLL-DRIVEN ANIMATION GATEWAY (300VH SCROLLYTELLING TRACK)    -->
   <!-- ========================================================================= -->
-  <section id="cinematic-entry" class="relative w-full min-h-screen bg-slate-950 text-white overflow-hidden flex flex-col justify-between select-none">
+  <section id="story-track" class="relative w-full h-[300vh] bg-gradient-to-b from-[#F0FDF4]/80 via-[#FEF3C7]/30 to-[#F8FAFC]">
     
-    <!-- 4K Background Video Player -->
-    <div class="absolute inset-0 w-full h-full overflow-hidden z-0">
-      <video id="heroVideo" autoplay loop muted playsinline 
-             class="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.08] transition-all duration-700">
-        <source id="videoSource" src="assets/videos/grain_straw_harvest.webm" type="video/webm">
-        <source src="assets/videos/tractor_field.webm" type="video/webm">
-      </video>
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/70 pointer-events-none"></div>
-    </div>
+    <!-- STICKY VIEWPORT CONTAINER (Locked in full view while user scrolls) -->
+    <div class="sticky top-0 w-full h-screen overflow-hidden flex flex-col justify-between select-none">
+      
+      <!-- 60FPS VECTOR/CANVAS LIVING CINEMATIC WORLD -->
+      <canvas id="storyCanvas" class="absolute inset-0 w-full h-full block cursor-ew-resize"></canvas>
 
-    <!-- Viewfinder HUD Top Bar -->
-    <div class="relative z-20 px-4 sm:px-8 pt-6 flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="w-11 h-11 rounded-2xl bg-agri-700 flex items-center justify-center text-white shadow-xl border border-emerald-400/30">
-          <span class="material-symbols-outlined text-2xl">agriculture</span>
+      <!-- TOP NAVIGATION & STATUS BAR -->
+      <div class="relative z-20 px-6 sm:px-10 pt-6 flex items-center justify-between pointer-events-none">
+        <div class="flex items-center gap-3 pointer-events-auto">
+          <div class="w-10 h-10 rounded-2xl bg-agri-700 text-white flex items-center justify-center shadow-md">
+            <span class="material-symbols-outlined text-2xl">agriculture</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-extrabold text-surface-textPrimary text-base tracking-tight font-display">AgriBridge India</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-agri-100 text-agri-800">2026 FLEET</span>
+            </div>
+            <p class="text-[11px] text-surface-textMuted font-mono">Pankaj Kumar Jha & Vishnu Godara</p>
+          </div>
         </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="font-extrabold text-white text-lg tracking-tight font-display">AgriBridge India</span>
-            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
-              4K CINEMATIC GATEWAY
+
+        <!-- Right Action Button -->
+        <div class="flex items-center gap-3 pointer-events-auto">
+          <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-slate-200 text-xs font-mono text-agri-800 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-agri-600 animate-ping"></span>
+            <span id="storyIndicatorText">Field Baling Active</span>
+          </div>
+          <a href="#main-landing" class="px-4 py-2 rounded-full bg-agri-700 hover:bg-agri-800 text-white font-bold text-xs shadow-md shadow-agri-700/20 transition-all flex items-center gap-1.5 active:scale-95">
+            <span>Skip to Platform</span>
+            <span class="material-symbols-outlined text-sm">south</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- MINIMAL FLOATING SIDE STORIES (Apple-Style Contextual Callouts) -->
+      <div class="relative z-20 px-6 sm:px-12 my-auto flex flex-col items-start max-w-xl pointer-events-none">
+        
+        <!-- Animated Side Card Container -->
+        <div id="sideStoryCard" class="glass-pill p-6 sm:p-7 rounded-3xl transition-all duration-500 transform translate-y-0 opacity-100 pointer-events-auto max-w-md">
+          
+          <div class="flex items-center gap-2 mb-2.5">
+            <span id="stageNumberBadge" class="px-2.5 py-0.5 rounded-full bg-agri-100 text-agri-800 text-[10px] font-mono font-extrabold tracking-wider">
+              STAGE 01 // HARVEST
+            </span>
+            <span id="stageSubBadge" class="text-[11px] font-mono font-bold text-agri-700">
+              55–75 HP Direct Mount
             </span>
           </div>
-          <p class="text-xs text-slate-300 font-mono">Commercial Scale: Pankaj Kumar Jha | Technical Head: Vishnu Godara</p>
+
+          <h2 id="stageTitle" class="text-2xl sm:text-3xl font-extrabold text-surface-textPrimary font-display leading-tight tracking-tight">
+            You want a high-density baler?
+          </h2>
+
+          <p id="stageDescription" class="text-xs sm:text-sm text-surface-textSecondary mt-2 leading-relaxed font-normal">
+            Paddy and wheat straw compacted in seconds. Eliminates 100% of stubble burning, backed by 50% DBT Government Subsidies.
+          </p>
+
+          <div class="mt-4 pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-mono">
+            <span id="stageMetric" class="font-bold text-agri-700">
+              ⚡ 80–120 Bales / Hour
+            </span>
+            <a href="#booking" class="font-bold text-surface-textPrimary hover:text-agri-700 flex items-center gap-1">
+              <span>Book Field Demo</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+
         </div>
+
       </div>
 
-      <!-- Telemetry & Action Buttons -->
-      <div class="flex items-center gap-3 text-xs font-mono">
-        <div class="hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-full hud-glass text-emerald-300">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          <span id="videoResolutionBadge">3840 x 2160 UHD @ 60FPS</span>
+      <!-- BOTTOM TIMELINE PROGRESS BAR & SCROLL CUE -->
+      <div class="relative z-20 px-6 sm:px-12 pb-8 flex flex-col sm:flex-row items-center justify-between gap-4 pointer-events-none">
+        
+        <!-- 3 Stage Dots Navigator -->
+        <div class="flex items-center gap-3 p-2 rounded-2xl bg-white/80 backdrop-blur-md border border-slate-200 pointer-events-auto shadow-sm">
+          <button onclick="jumpToStoryStage(0.05)" id="dotBtn0" class="flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-mono font-bold transition-all bg-agri-700 text-white shadow-sm">
+            <span>1. Field Baler</span>
+          </button>
+          <button onclick="jumpToStoryStage(0.50)" id="dotBtn1" class="flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-mono font-bold transition-all text-surface-textMuted hover:text-surface-textPrimary">
+            <span>2. Truck Logistics</span>
+          </button>
+          <button onclick="jumpToStoryStage(0.95)" id="dotBtn2" class="flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-mono font-bold transition-all text-surface-textMuted hover:text-surface-textPrimary">
+            <span>3. Biofuel Plant</span>
+          </button>
         </div>
 
-        <button onclick="toggleVideoAudio()" id="btnAudioToggle" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full hud-glass text-white hover:bg-white/20 transition-all">
-          <span class="material-symbols-outlined text-sm" id="audioIcon">volume_off</span>
-          <span id="audioText">Sound Off</span>
-        </button>
-
-        <a href="#main-landing" class="px-5 py-2.5 rounded-full bg-white text-slate-950 font-bold text-xs hover:bg-agri-100 transition-all flex items-center gap-2 shadow-2xl active:scale-95">
-          <span>ENTER PLATFORM</span>
-          <span class="material-symbols-outlined text-sm font-bold">south</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Center Cinematic Viewfinder HUD / Chapter Titles -->
-    <div class="relative z-20 px-4 sm:px-8 max-w-5xl mx-auto my-auto text-center space-y-6 py-8">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full hud-glass text-xs font-mono text-emerald-300 shadow-xl">
-        <span class="material-symbols-outlined text-base text-emerald-400">play_circle</span>
-        <span id="currentChapterLabel">CHAPTER 01 // 4K PRECISION GRAIN & STRAW HARVEST (3840x2160)</span>
-      </div>
-
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.06] font-display drop-shadow-2xl">
-        <span class="block">High-Tech Farm Machinery</span>
-        <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-amber-300 to-emerald-200">
-          From Crop Residue to Clean Biofuel
-        </span>
-      </h1>
-
-      <p class="text-base sm:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed font-normal drop-shadow">
-        Watch high-capacity balers and 4K precision harvesters clear agricultural stubble in seconds — stopping 100% of air pollution while fueling India’s 2G Bio-Ethanol refineries.
-      </p>
-
-      <!-- Video Chapter Switcher Pills -->
-      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-        <button onclick="switchCinematicVideo(0)" id="vidBtn0" 
-                class="px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all border-2 border-emerald-400 bg-emerald-950/80 text-emerald-200 shadow-xl flex items-center gap-2">
-          <span class="material-symbols-outlined text-base">smart_display</span>
-          <span>1. 4K Crop Harvest (3840x2160)</span>
-        </button>
-        <button onclick="switchCinematicVideo(1)" id="vidBtn1" 
-                class="px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all border border-white/20 bg-black/50 hover:bg-black/80 text-slate-300 flex items-center gap-2">
-          <span class="material-symbols-outlined text-base">agriculture</span>
-          <span>2. In-Field Tractor Baler (1080p)</span>
-        </button>
-        <button onclick="switchCinematicVideo(2)" id="vidBtn2" 
-                class="px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all border border-white/20 bg-black/50 hover:bg-black/80 text-slate-300 flex items-center gap-2">
-          <span class="material-symbols-outlined text-base">factory</span>
-          <span>3. 2G Biofuel Clean Energy Flow</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- Bottom HUD & Scrollytelling Controls -->
-    <div class="relative z-20 px-4 sm:px-8 pb-10 space-y-4 max-w-6xl mx-auto w-full">
-      <!-- Live Real-Time Telemetry Bar -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div class="p-3.5 rounded-2xl hud-glass">
-          <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Tractor PTO Match</div>
-          <div class="text-xl font-bold text-white font-mono mt-0.5">55 – 75 HP</div>
-          <div class="text-[11px] text-emerald-400 font-mono">Standard 540 RPM</div>
+        <!-- Scroll Prompt with Physics Pulse -->
+        <div class="flex items-center gap-2 text-xs font-mono text-surface-textSecondary bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200 shadow-sm pointer-events-auto">
+          <span class="material-symbols-outlined text-sm text-agri-600 animate-bounce">south</span>
+          <span>Scroll down to advance journey</span>
         </div>
-        <div class="p-3.5 rounded-2xl hud-glass">
-          <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Compaction Density</div>
-          <div class="text-xl font-bold text-white font-mono mt-0.5">145 kg/m³</div>
-          <div class="text-[11px] text-emerald-400 font-mono">15 Tons / Truckload</div>
-        </div>
-        <div class="p-3.5 rounded-2xl hud-glass">
-          <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Stubble Smoke</div>
-          <div class="text-xl font-bold text-emerald-400 font-mono mt-0.5">100% Eliminated</div>
-          <div class="text-[11px] text-slate-300 font-mono">Zero Field Burning</div>
-        </div>
-        <div class="p-3.5 rounded-2xl hud-glass">
-          <div class="text-[10px] font-mono text-slate-400 uppercase tracking-wider">Biofuel Yield</div>
-          <div class="text-xl font-bold text-amber-300 font-mono mt-0.5">280 L / Ton</div>
-          <div class="text-[11px] text-slate-300 font-mono">Clean 2G Ethanol</div>
-        </div>
+
       </div>
 
-      <!-- Scrollytelling Scrubber Timeline Bar -->
-      <div class="p-3.5 rounded-2xl hud-glass flex items-center justify-between gap-4 shadow-2xl">
-        <button onclick="toggleVideoPlayback()" id="btnPlayPause" class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
-          <span class="material-symbols-outlined text-xl" id="playPauseIcon">pause</span>
-        </button>
-        <span class="text-xs font-mono text-slate-300 hidden sm:inline" id="videoTimeCurrent">00:00</span>
-        <input type="range" id="videoScrubber" min="0" max="1000" value="0" oninput="handleVideoScrub(this.value)"
-               class="flex-1 h-2 bg-white/20 rounded-lg appearance-none cursor-pointer accent-emerald-400">
-        <span class="text-xs font-mono text-slate-300 hidden sm:inline" id="videoTimeDuration">00:10</span>
-        <a href="#main-landing" class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-agri-600 hover:bg-agri-500 text-white font-bold text-xs transition-all shadow-xl active:scale-95">
-          <span>EXPLORE PLATFORM</span>
-          <span class="material-symbols-outlined text-base animate-bounce">arrow_downward</span>
-        </a>
-      </div>
     </div>
   </section>
 
   <!-- ========================================================================= -->
   <!-- 2. STICKY DAYLIGHT HEADER FOR MAIN PLATFORM                               -->
   <!-- ========================================================================= -->
-  <div class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
-    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
-      <a href="#cinematic-entry" class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-agri-700 flex items-center justify-center text-white shadow-sm">
-          <span class="material-symbols-outlined text-xl">agriculture</span>
+  <div class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <a href="#story-track" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-xl bg-agri-700 flex items-center justify-center text-white shadow-sm">
+          <span class="material-symbols-outlined text-lg">agriculture</span>
         </div>
         <div>
-          <div class="flex items-center gap-2">
-            <span class="font-extrabold text-surface-textPrimary text-base tracking-tight font-display">AgriBridge</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-agri-100 text-agri-800">INDIA</span>
+          <div class="flex items-center gap-1.5">
+            <span class="font-extrabold text-surface-textPrimary text-sm tracking-tight font-display">AgriBridge</span>
+            <span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-agri-100 text-agri-800">INDIA</span>
           </div>
-          <span class="block text-[11px] font-medium text-surface-textMuted -mt-0.5">Commercial & Engineering Gateway</span>
+          <span class="block text-[10px] text-surface-textMuted -mt-0.5">Farm Machinery Gateway</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Links -->
+      <!-- Navigation Links -->
       <nav class="hidden md:flex items-center gap-7 text-xs font-semibold text-surface-textSecondary">
-        <a href="#cinematic-entry" class="hover:text-agri-700 transition-colors flex items-center gap-1 text-agri-700">
-          <span class="material-symbols-outlined text-base">play_circle</span>
-          <span>4K Video Feed</span>
+        <a href="#story-track" class="hover:text-agri-700 transition-colors flex items-center gap-1 text-agri-700">
+          <span class="material-symbols-outlined text-sm">animation</span>
+          <span>Interactive Journey</span>
         </a>
         <a href="#leadership" class="hover:text-agri-700 transition-colors">Executive Pillars</a>
         <a href="#machinery" class="hover:text-agri-700 transition-colors">Machinery Showroom</a>
@@ -253,27 +226,25 @@
 
       <!-- Action Group -->
       <div class="flex items-center gap-3">
-        <button onclick="toggleChatBot()" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-agri-50 border border-agri-200 text-agri-800 hover:bg-agri-100 text-xs font-bold font-mono transition-all">
-          <span class="material-symbols-outlined text-base text-agri-600">smart_toy</span>
-          <span class="hidden sm:inline">ASK AI</span>
+        <button onclick="toggleChatBot()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-agri-50 border border-agri-200 text-agri-800 hover:bg-agri-100 text-xs font-bold font-mono transition-all">
+          <span class="material-symbols-outlined text-sm text-agri-600">smart_toy</span>
+          <span>ASK AI</span>
         </button>
 
-        <a href="#booking" class="group flex items-center gap-2 pl-4 pr-2 py-1.5 rounded-full bg-agri-700 hover:bg-agri-800 text-white font-bold text-xs shadow-md shadow-agri-700/20 transition-all active:scale-95">
+        <a href="#booking" class="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-agri-700 hover:bg-agri-800 text-white font-bold text-xs shadow-sm transition-all active:scale-95">
           <span>SCHEDULE DEMO</span>
-          <span class="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center">
-            <span class="material-symbols-outlined text-xs">arrow_forward</span>
-          </span>
+          <span class="material-symbols-outlined text-xs">arrow_forward</span>
         </a>
       </div>
     </header>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 3. MAIN LANDING PAGE CONTAINER (LUMINOUS DAYLIGHT)                        -->
+  <!-- 3. MAIN LANDING PLATFORM (REVEALED BELOW ANIMATION)                       -->
   <!-- ========================================================================= -->
   <main id="main-landing" class="relative z-10 bg-surface-background">
 
-    <!-- Section Intro Banner -->
+    <!-- Platform Intro -->
     <div class="pt-16 pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center space-y-3">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-agri-200 text-xs font-semibold text-agri-800 shadow-sm">
         <span class="material-symbols-outlined text-base text-agri-600">verified</span>
@@ -290,7 +261,7 @@
     <!-- ========================================================================= -->
     <!-- 4. EXECUTIVE LEADERSHIP PILLARS (PANKAJ KUMAR JHA & VISHNU GODARA)        -->
     <!-- ========================================================================= -->
-    <section id="leadership" class="scroll-target py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="leadership" class="scroll-target py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
       <div class="mb-12 text-center max-w-3xl mx-auto space-y-3">
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-agri-100 text-agri-800 text-xs font-mono font-bold uppercase tracking-wider">
@@ -417,7 +388,7 @@
     <!-- ========================================================================= -->
     <!-- 5. MACHINERY SHOWROOM & SPECIFICATIONS                                    -->
     <!-- ========================================================================= -->
-    <section id="machinery" class="scroll-target py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="machinery" class="scroll-target py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       
       <div class="mb-10 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
@@ -442,7 +413,6 @@
         </div>
       </div>
 
-      <!-- Machinery Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Card 1: CR-800 Round Baler -->
@@ -544,7 +514,7 @@
     <!-- ========================================================================= -->
     <!-- 6. GOVERNMENT DBT SUBSIDY & PAYBACK CALCULATOR                            -->
     <!-- ========================================================================= -->
-    <section id="calculator" class="scroll-target py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="calculator" class="scroll-target py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div class="light-bezel p-8 sm:p-12 space-y-8">
         
         <div class="text-center max-w-2xl mx-auto space-y-2">
@@ -561,7 +531,6 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           
-          <!-- Input Controls -->
           <div class="space-y-6 p-6 rounded-2xl bg-slate-50 border border-slate-200">
             <div>
               <label class="block text-xs font-bold uppercase text-surface-textPrimary mb-2">Farmer Category & Subsidy Tier</label>
@@ -596,7 +565,6 @@
             </div>
           </div>
 
-          <!-- Output Results Display -->
           <div class="p-8 rounded-2xl bg-agri-900 text-white space-y-6 shadow-xl">
             <div>
               <span class="text-xs font-mono text-emerald-400 uppercase tracking-wider">Estimated Seasonal Net Profit</span>
@@ -636,7 +604,7 @@
     <!-- ========================================================================= -->
     <!-- 7. FIELD DEMO & DEALERSHIP FRANCHISE DISPATCH                             -->
     <!-- ========================================================================= -->
-    <section id="booking" class="scroll-target py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="booking" class="scroll-target py-14 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         <!-- Form 1: Farmer Field Demo -->
@@ -825,106 +793,456 @@
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 9. JAVASCRIPT: 4K VIDEO SCROLLYTELLING & AI SYSTEM                        -->
+  <!-- 9. JAVASCRIPT: LUXURY VECTOR/CANVAS SCROLL ENGINE & MICRO-PHYSICS         -->
   <!-- ========================================================================= -->
   <script>
     // ---------------------------------------------------------------------------
-    // 1. 4K VIDEO ENGINE & SCROLLYTELLING
+    // 1. HIGH-PRECISION 60FPS VECTOR SCROLL ENGINE WITH ORGANIC IDLE BOUNCE
     // ---------------------------------------------------------------------------
-    const cinematicVideos = [
-      {
-        title: "CHAPTER 01 // 4K PRECISION GRAIN & STRAW HARVEST (3840x2160)",
-        src: "assets/videos/grain_straw_harvest.webm",
-        resolution: "3840 x 2160 UHD @ 60FPS"
-      },
-      {
-        title: "CHAPTER 02 // IN-FIELD TRACTOR BALER RESIDUE COMPACTION (1080p)",
-        src: "assets/videos/tractor_field.webm",
-        resolution: "1920 x 1080 FHD @ 60FPS"
-      },
-      {
-        title: "CHAPTER 03 // 2G CLEAN BIOFUEL REFINERY FEEDSTOCK LOGISTICS",
-        src: "assets/videos/grain_straw_harvest.webm",
-        resolution: "3840 x 2160 UHD (Refinery Feed)"
+    const canvas = document.getElementById('storyCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let currentProgress = 0.0; // 0.0 to 1.0 interpolated
+    let targetProgress = 0.0;
+    let ambientTime = 0.0;
+    let lastRenderStage = -1;
+
+    // Responsive Canvas Resize
+    function resizeCanvas() {
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // Scroll Listener on #story-track (300vh height)
+    window.addEventListener('scroll', () => {
+      const track = document.getElementById('story-track');
+      if (!track) return;
+      const rect = track.getBoundingClientRect();
+      const trackHeight = track.offsetHeight - window.innerHeight;
+      if (trackHeight <= 0) return;
+
+      const scrolled = -rect.top;
+      const fraction = Math.max(0, Math.min(1, scrolled / trackHeight));
+      targetProgress = fraction;
+    });
+
+    function jumpToStoryStage(prog) {
+      const track = document.getElementById('story-track');
+      if (!track) return;
+      const trackHeight = track.offsetHeight - window.innerHeight;
+      const targetY = track.offsetTop + (prog * trackHeight);
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+
+    // Floating Particles for Field Straw Dust & Biofuel Flow
+    const fieldParticles = Array.from({ length: 45 }, () => ({
+      x: Math.random() * 800,
+      y: Math.random() * 300,
+      size: 1.5 + Math.random() * 3,
+      speed: 1 + Math.random() * 2,
+      phase: Math.random() * Math.PI * 2
+    }));
+
+    const liquidDroplets = Array.from({ length: 30 }, () => ({
+      offset: Math.random() * 500,
+      speed: 3 + Math.random() * 2.5,
+      size: 3 + Math.random() * 3
+    }));
+
+    // Main 60FPS Render Loop
+    function renderFrame() {
+      ambientTime += 0.035;
+
+      // Inertial smoothing lerp (Apple-like momentum)
+      currentProgress += (targetProgress - currentProgress) * 0.085;
+
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      ctx.clearRect(0, 0, w, h);
+
+      // Camera horizontal translation: World is 3 viewport widths wide
+      const totalWorldWidth = w * 2.6;
+      const cameraX = currentProgress * (totalWorldWidth - w);
+
+      ctx.save();
+      ctx.translate(-cameraX, 0);
+
+      // -------------------------------------------------------------
+      // 1. SKY & DISTANT HORIZON (Daylight Gradient)
+      // -------------------------------------------------------------
+      const skyGradient = ctx.createLinearGradient(0, 0, 0, h * 0.7);
+      skyGradient.addColorStop(0, '#E0F2FE');
+      skyGradient.addColorStop(0.5, '#FEF3C7');
+      skyGradient.addColorStop(1, '#F0FDF4');
+      ctx.fillStyle = skyGradient;
+      ctx.fillRect(0, 0, totalWorldWidth, h);
+
+      // Rolling Green Sunlit Hills
+      ctx.fillStyle = '#BBF7D0';
+      ctx.beginPath();
+      ctx.moveTo(0, h * 0.55);
+      for (let x = 0; x <= totalWorldWidth; x += 150) {
+        const hillY = (h * 0.55) + Math.sin((x * 0.003) + ambientTime * 0.2) * 18;
+        ctx.quadraticCurveTo(x + 75, hillY - 20, x + 150, hillY);
       }
-    ];
+      ctx.lineTo(totalWorldWidth, h);
+      ctx.lineTo(0, h);
+      ctx.fill();
 
-    let currentVidIdx = 0;
-    const heroVideo = document.getElementById('heroVideo');
-    const videoScrubber = document.getElementById('videoScrubber');
+      // Soft Drifting Clouds
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
+      for (let c = 0; c < 6; c++) {
+        const cx = ((c * 450) + ambientTime * 8) % (totalWorldWidth + 200) - 100;
+        const cy = h * 0.15 + (c % 3) * 40;
+        ctx.beginPath();
+        ctx.arc(cx, cy, 45, 0, Math.PI * 2);
+        ctx.arc(cx + 40, cy - 15, 38, 0, Math.PI * 2);
+        ctx.arc(cx + 80, cy, 42, 0, Math.PI * 2);
+        ctx.fill();
+      }
 
-    function switchCinematicVideo(idx) {
-      currentVidIdx = idx;
-      heroVideo.src = cinematicVideos[idx].src;
-      heroVideo.play().catch(() => {});
-      document.getElementById('currentChapterLabel').innerText = cinematicVideos[idx].title;
-      document.getElementById('videoResolutionBadge').innerText = cinematicVideos[idx].resolution;
-      
+      // -------------------------------------------------------------
+      // 2. ZONE 1: SUNLIT HARVEST FIELD & TRACTOR BALER (0.0 - 0.35)
+      // -------------------------------------------------------------
+      const groundY = h * 0.68;
+
+      // Crop Field Base
+      ctx.fillStyle = '#FDE68A'; // Golden harvest straw field
+      ctx.fillRect(0, groundY, w * 0.95, h - groundY);
+
+      // Stubble Crop Rows (Stripes)
+      ctx.strokeStyle = '#D97706';
+      ctx.lineWidth = 3;
+      for (let r = 0; r < 6; r++) {
+        const rowY = groundY + 30 + (r * 22);
+        ctx.beginPath();
+        ctx.moveTo(0, rowY);
+        ctx.lineTo(w * 0.95, rowY);
+        ctx.stroke();
+      }
+
+      // Tractor & Baler Placement (With Organic Idle Suspension Bounce)
+      const tractorBaseX = w * 0.32;
+      const idleBounce = Math.sin(ambientTime * 3) * 3; // The organic idle suspension bounce requested!
+      const tractorY = groundY - 60 + idleBounce;
+
+      // Dropped Bales on Field Rows
+      const balePositions = [w * 0.08, w * 0.18, w * 0.26];
+      balePositions.forEach((bx, idx) => {
+        ctx.fillStyle = '#D97706';
+        ctx.beginPath();
+        ctx.roundRect(bx, groundY + 15 + (idx % 2) * 15, 42, 28, 6);
+        ctx.fill();
+        ctx.strokeStyle = '#FDE68A';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(bx + 21, groundY + 29 + (idx % 2) * 15, 10, 0, Math.PI * 2);
+        ctx.stroke();
+      });
+
+      // Straw Suction Particle Stream (into Baler)
+      ctx.fillStyle = '#F59E0B';
+      fieldParticles.forEach(p => {
+        const px = tractorBaseX - 110 + ((p.x - ambientTime * 60) % 220);
+        const py = groundY - 20 + Math.sin(p.phase + ambientTime * 4) * 20;
+        ctx.beginPath();
+        ctx.arc(px, py, p.size, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // TRACTOR BODY (Forest AgTech Emerald #047857)
+      ctx.fillStyle = '#047857';
+      ctx.beginPath();
+      ctx.roundRect(tractorBaseX + 60, tractorY - 25, 80, 55, [8, 16, 4, 4]);
+      ctx.fill();
+
+      // Tractor Cab (Glass & Dark Pillar)
+      ctx.fillStyle = '#0F172A';
+      ctx.fillRect(tractorBaseX, tractorY - 70, 65, 70);
+      ctx.fillStyle = '#BAE6FD'; // Light blue glass
+      ctx.fillRect(tractorBaseX + 6, tractorY - 64, 52, 40);
+
+      // Exhaust Pipe with Gentle Steam Puff
+      ctx.fillStyle = '#475569';
+      ctx.fillRect(tractorBaseX + 110, tractorY - 60, 7, 40);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.65)';
+      ctx.beginPath();
+      const puffOffset = (ambientTime * 20) % 30;
+      ctx.arc(tractorBaseX + 113, tractorY - 65 - puffOffset, 6 + (puffOffset * 0.4), 0, Math.PI * 2);
+      ctx.fill();
+
+      // Tractor Rear Wheel (Big)
+      const wheelRotate = currentProgress * 25 + ambientTime * 1.5;
+      ctx.fillStyle = '#1E293B';
+      ctx.beginPath();
+      ctx.arc(tractorBaseX + 30, tractorY + 25, 42, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#F59E0B'; // Yellow rim
+      ctx.lineWidth = 6;
+      ctx.stroke();
+
+      // Tractor Front Wheel (Smaller)
+      ctx.fillStyle = '#1E293B';
+      ctx.beginPath();
+      ctx.arc(tractorBaseX + 125, tractorY + 35, 28, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#F59E0B';
+      ctx.lineWidth = 5;
+      ctx.stroke();
+
+      // Hitch Arm
+      ctx.strokeStyle = '#334155';
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.moveTo(tractorBaseX, tractorY + 25);
+      ctx.lineTo(tractorBaseX - 35, tractorY + 25);
+      ctx.stroke();
+
+      // HIGH-DENSITY ROUND BALER (Yellow/Amber Chamber)
+      ctx.fillStyle = '#F59E0B';
+      ctx.beginPath();
+      ctx.roundRect(tractorBaseX - 145, tractorY - 35, 110, 75, 16);
+      ctx.fill();
+      ctx.strokeStyle = '#D97706';
+      ctx.lineWidth = 4;
+      ctx.stroke();
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 11px monospace';
+      ctx.fillText('CR-800 BALER', tractorBaseX - 130, tractorY - 10);
+
+      // Baler Pickup Reel (Spinning teeth)
+      ctx.strokeStyle = '#1E293B';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(tractorBaseX - 105, tractorY + 45, 18, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.fillStyle = '#1E293B';
+      ctx.beginPath();
+      ctx.arc(tractorBaseX - 85, tractorY + 38, 25, 0, Math.PI * 2);
+      ctx.fill();
+
+      // -------------------------------------------------------------
+      // 3. ZONE 2: HIGHWAY BIOMASS TRANSPORT LOGISTICS (0.35 - 0.70)
+      // -------------------------------------------------------------
+      const highwayX = w * 0.95;
+      const highwayW = w * 0.75;
+
+      // Asphalt Road
+      ctx.fillStyle = '#334155';
+      ctx.fillRect(highwayX, groundY + 10, highwayW, h - groundY);
+
+      // Road Dashed White Lines
+      ctx.strokeStyle = '#FFFFFF';
+      ctx.lineWidth = 4;
+      ctx.setLineDash([25, 20]);
+      ctx.beginPath();
+      ctx.moveTo(highwayX, groundY + 55);
+      ctx.lineTo(highwayX + highwayW, groundY + 55);
+      ctx.stroke();
+      ctx.setLineDash([]); // Reset dash
+
+      // Heavy Flatbed Logistics Truck with Bales
+      const truckX = highwayX + (highwayW * 0.35);
+      const truckBounce = Math.sin(ambientTime * 3.5) * 2; // Pneumatic suspension idle bounce
+      const truckY = groundY - 45 + truckBounce;
+
+      // Flatbed Platform Trailer
+      ctx.fillStyle = '#1E293B';
+      ctx.fillRect(truckX - 160, truckY + 20, 240, 15);
+
+      // Stacked Golden Straw Bales on Flatbed
+      for (let layer = 0; layer < 2; layer++) {
+        for (let col = 0; col < 5; col++) {
+          ctx.fillStyle = '#D97706';
+          ctx.beginPath();
+          ctx.roundRect(truckX - 150 + (col * 30), truckY - 35 + (layer * 26), 28, 24, 4);
+          ctx.fill();
+          ctx.strokeStyle = '#FDE68A';
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+        }
+      }
+
+      // Truck Modern Aerodynamic Cab (White & Emerald)
+      ctx.fillStyle = '#FFFFFF';
+      ctx.beginPath();
+      ctx.roundRect(truckX + 85, truckY - 35, 75, 70, [12, 16, 4, 4]);
+      ctx.fill();
+      ctx.strokeStyle = '#CBD5E1';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Cab Windshield (Sky Blue Glass)
+      ctx.fillStyle = '#0284C7';
+      ctx.fillRect(truckX + 115, truckY - 25, 36, 32);
+
+      // Truck Wheels (Alloy rims)
+      [-130, -90, -40, 0, 110, 140].forEach(wx => {
+        ctx.fillStyle = '#0F172A';
+        ctx.beginPath();
+        ctx.arc(truckX + wx, truckY + 45, 18, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = '#94A3B8';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+      });
+
+      // -------------------------------------------------------------
+      // 4. ZONE 3: 2G CLEAN BIOFUEL & ETHANOL REFINERY (0.70 - 1.0)
+      // -------------------------------------------------------------
+      const refX = highwayX + highwayW;
+      const refW = w * 0.95;
+
+      // Clean Industrial Concrete Platform
+      ctx.fillStyle = '#E2E8F0';
+      ctx.fillRect(refX, groundY + 10, refW, h - groundY);
+
+      const plantX = refX + (w * 0.18);
+      const plantY = groundY - 140;
+
+      // Tall Stainless Steel Distillation Fractionator Towers
+      [0, 55, 115].forEach((offset, idx) => {
+        const colH = 150 + (idx === 1 ? 40 : 0);
+        const colY = groundY - colH + 10;
+        
+        // Steel column gradient
+        const colGrad = ctx.createLinearGradient(plantX + offset, 0, plantX + offset + 45, 0);
+        colGrad.addColorStop(0, '#E2E8F0');
+        colGrad.addColorStop(0.5, '#FFFFFF');
+        colGrad.addColorStop(1, '#CBD5E1');
+        ctx.fillStyle = colGrad;
+        ctx.fillRect(plantX + offset, colY, 45, colH);
+
+        // Tower Rings
+        ctx.strokeStyle = '#94A3B8';
+        ctx.lineWidth = 2;
+        for (let ringY = colY + 15; ringY < groundY; ringY += 25) {
+          ctx.beginPath();
+          ctx.moveTo(plantX + offset - 2, ringY);
+          ctx.lineTo(plantX + offset + 47, ringY);
+          ctx.stroke();
+        }
+
+        // Clean white vapor wisp from top
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.beginPath();
+        const steamY = (ambientTime * 15 + idx * 10) % 25;
+        ctx.arc(plantX + offset + 22, colY - 10 - steamY, 8 + (steamY * 0.5), 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // Green Spherical Bio-Gas / Ethanol Digestor Dome
+      ctx.fillStyle = '#047857';
+      ctx.beginPath();
+      ctx.arc(plantX + 225, groundY - 50, 65, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#10B981';
+      ctx.lineWidth = 5;
+      ctx.stroke();
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 12px monospace';
+      ctx.fillText('2G BIO-ETHANOL', plantX + 175, groundY - 50);
+
+      // Transparent Glass Pipeline Conduit
+      ctx.strokeStyle = 'rgba(14, 165, 233, 0.25)';
+      ctx.lineWidth = 16;
+      ctx.beginPath();
+      ctx.moveTo(plantX + 90, groundY - 10);
+      ctx.lineTo(plantX + 360, groundY - 10);
+      ctx.stroke();
+
+      // Glowing Green Biofuel Liquid Droplets Flowing Through Glass Conduit
+      liquidDroplets.forEach(d => {
+        const dropX = plantX + 90 + ((d.offset + ambientTime * (d.speed * 40)) % 270);
+        ctx.fillStyle = '#22C55E';
+        ctx.shadowColor = '#22C55E';
+        ctx.shadowBlur = 10;
+        ctx.beginPath();
+        ctx.arc(dropX, groundY - 10, d.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.shadowBlur = 0; // Reset shadow
+      });
+
+      // Biofuel Tanker Loading Bay (E20 Clean Fuel Tanker)
+      ctx.fillStyle = '#065F46';
+      ctx.beginPath();
+      ctx.roundRect(plantX + 370, groundY - 50, 110, 55, 12);
+      ctx.fill();
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 10px monospace';
+      ctx.fillText('E20 TANKER', plantX + 395, groundY - 20);
+
+      ctx.restore();
+
+      // -------------------------------------------------------------
+      // 5. UPDATE FLOATING MINIMAL SIDE TEXT ACCORDING TO STAGE
+      // -------------------------------------------------------------
+      updateSideStories(currentProgress);
+
+      requestAnimationFrame(renderFrame);
+    }
+
+    // Dynamic Minimal Side Text Handler
+    function updateSideStories(prog) {
+      let activeStage = 0;
+      if (prog < 0.35) activeStage = 0;
+      else if (prog < 0.70) activeStage = 1;
+      else activeStage = 2;
+
+      // Update Nav Buttons
       [0, 1, 2].forEach(i => {
-        const btn = document.getElementById(`vidBtn${i}`);
-        if (i === idx) {
-          btn.className = "px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all border-2 border-emerald-400 bg-emerald-950/80 text-emerald-200 shadow-xl flex items-center gap-2";
+        const btn = document.getElementById(`dotBtn${i}`);
+        if (i === activeStage) {
+          btn.className = "flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-mono font-bold transition-all bg-agri-700 text-white shadow-sm";
         } else {
-          btn.className = "px-4 py-2.5 rounded-xl text-xs font-mono font-bold transition-all border border-white/20 bg-black/50 hover:bg-black/80 text-slate-300 flex items-center gap-2";
+          btn.className = "flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-mono font-bold transition-all text-surface-textMuted hover:text-surface-textPrimary";
         }
       });
-    }
 
-    // Scroll-Linked Scrubbing
-    window.addEventListener('scroll', () => {
-      const entry = document.getElementById('cinematic-entry');
-      if (!entry) return;
-      const rect = entry.getBoundingClientRect();
-      const h = entry.offsetHeight;
-      
-      if (rect.top <= 0 && rect.bottom >= 0) {
-        const progress = Math.min(1, Math.max(0, -rect.top / (h * 0.75)));
-        if (heroVideo.duration && isFinite(heroVideo.duration)) {
-          heroVideo.currentTime = progress * heroVideo.duration;
-        }
+      // If stage changed, animate card content smoothly
+      if (activeStage !== lastRenderStage) {
+        lastRenderStage = activeStage;
+        const card = document.getElementById('sideStoryCard');
+        card.classList.add('opacity-0', 'translate-y-2');
+
+        setTimeout(() => {
+          if (activeStage === 0) {
+            document.getElementById('stageNumberBadge').innerText = 'STAGE 01 // HARVEST';
+            document.getElementById('stageSubBadge').innerText = '55–75 HP Direct Mount';
+            document.getElementById('stageTitle').innerText = 'You want a high-density baler?';
+            document.getElementById('stageDescription').innerText = 'Paddy and wheat straw compacted into dense square or round bales in seconds. Stops 100% of stubble burning, backed by 50% DBT subsidies.';
+            document.getElementById('stageMetric').innerText = '⚡ 80–120 Bales / Hour';
+            document.getElementById('storyIndicatorText').innerText = 'Field Baling Active';
+          } else if (activeStage === 1) {
+            document.getElementById('stageNumberBadge').innerText = 'STAGE 02 // LOGISTICS';
+            document.getElementById('stageSubBadge').innerText = '15 Tons per Highway Load';
+            document.getElementById('stageTitle').innerText = 'Biomass haulage without bottlenecks?';
+            document.getElementById('stageDescription').innerText = 'High-density packaging enables 15 tons per flatbed trailer. Direct village aggregation channels eliminating logistical downtime.';
+            document.getElementById('stageMetric').innerText = '🚛 15 Tons / Truckload';
+            document.getElementById('storyIndicatorText').innerText = 'Highway Logistics en route';
+          } else {
+            document.getElementById('stageNumberBadge').innerText = 'STAGE 03 // 2G BIOFUEL';
+            document.getElementById('stageSubBadge').innerText = '₹1,800 – ₹2,200 / Ton';
+            document.getElementById('stageTitle').innerText = 'Guaranteed 2G refinery off-take?';
+            document.getElementById('stageDescription').innerText = 'Straw feedstock supplied directly to IOCL Panipat, HPCL Bathinda & BPCL 2G bio-ethanol refineries, earning ~₹4,500/acre net seasonal profit.';
+            document.getElementById('stageMetric').innerText = '⚡ 280 Litres Ethanol / Ton';
+            document.getElementById('storyIndicatorText').innerText = 'Biofuel Synthesis Active';
+          }
+
+          card.classList.remove('opacity-0', 'translate-y-2');
+        }, 180);
       }
-    });
-
-    // Time update listener
-    heroVideo.addEventListener('timeupdate', () => {
-      if (heroVideo.duration && isFinite(heroVideo.duration)) {
-        const pct = (heroVideo.currentTime / heroVideo.duration) * 1000;
-        if (document.activeElement !== videoScrubber) {
-          videoScrubber.value = pct;
-        }
-        const curM = Math.floor(heroVideo.currentTime / 60);
-        const curS = Math.floor(heroVideo.currentTime % 60);
-        const durM = Math.floor(heroVideo.duration / 60);
-        const durS = Math.floor(heroVideo.duration % 60);
-        document.getElementById('videoTimeCurrent').innerText = `${String(curM).padStart(2,'0')}:${String(curS).padStart(2,'0')}`;
-        document.getElementById('videoTimeDuration').innerText = `${String(durM).padStart(2,'0')}:${String(durS).padStart(2,'0')}`;
-      }
-    });
-
-    function handleVideoScrub(val) {
-      if (heroVideo.duration && isFinite(heroVideo.duration)) {
-        heroVideo.currentTime = (val / 1000) * heroVideo.duration;
-      }
-    }
-
-    function toggleVideoPlayback() {
-      if (heroVideo.paused) {
-        heroVideo.play();
-        document.getElementById('playPauseIcon').innerText = 'pause';
-      } else {
-        heroVideo.pause();
-        document.getElementById('playPauseIcon').innerText = 'play_arrow';
-      }
-    }
-
-    function toggleVideoAudio() {
-      heroVideo.muted = !heroVideo.muted;
-      document.getElementById('audioIcon').innerText = heroVideo.muted ? 'volume_off' : 'volume_up';
-      document.getElementById('audioText').innerText = heroVideo.muted ? 'Sound Off' : 'Sound On';
     }
 
     // ---------------------------------------------------------------------------
-    // 2. SUBSIDY CALCULATOR
+    // 2. SUBSIDY CALCULATOR LOGIC
     // ---------------------------------------------------------------------------
     function calculateSubsidy() {
       const tier = parseFloat(document.getElementById('farmerTier').value);
@@ -953,7 +1271,7 @@
     }
 
     // ---------------------------------------------------------------------------
-    // 3. MACHINERY FILTER & MODAL
+    // 3. MACHINERY SHOWROOM FILTERS & MODAL
     // ---------------------------------------------------------------------------
     function filterMachinery(cat) {
       const cards = document.querySelectorAll('.machine-card');
@@ -978,33 +1296,18 @@
     }
 
     function openMachineModal(name) {
-      alert(`CFMTTI Technical Dossier for ${name}:
-
-• Test Report: Valid Budhni/Hisar Government Certification
-• Direct DBT SMAM Grant: Approved
-• Field Dispatch by Vishnu Godara`);
+      alert(`CFMTTI Technical Dossier for ${name}:\n\n• Test Report: Valid Budhni/Hisar Government Certification\n• Direct DBT SMAM Grant: Approved\n• Field Dispatch by Vishnu Godara`);
     }
 
     function handleDemoSubmit(e) {
       e.preventDefault();
-      alert(`Field Demo Request Dispatched!
-
-Name: ${document.getElementById('demoName').value}
-Location: ${document.getElementById('demoLocation').value}
-Tractor: ${document.getElementById('demoTractor').value}
-
-Our technical team led by Vishnu Godara will contact you within 2 hours.`);
+      alert(`Field Demo Request Dispatched!\n\nName: ${document.getElementById('demoName').value}\nLocation: ${document.getElementById('demoLocation').value}\nTractor: ${document.getElementById('demoTractor').value}\n\nOur technical team led by Vishnu Godara will contact you within 2 hours.`);
       e.target.reset();
     }
 
     function handleFranchiseSubmit(e) {
       e.preventDefault();
-      alert(`Dealership Franchise Dossier Submitted!
-
-Firm: ${document.getElementById('dealerFirm').value}
-Territory: ${document.getElementById('dealerTerritory').value}
-
-Commercial Director Pankaj Kumar Jha will review your inquiry.`);
+      alert(`Dealership Franchise Dossier Submitted!\n\nFirm: ${document.getElementById('dealerFirm').value}\nTerritory: ${document.getElementById('dealerTerritory').value}\n\nCommercial Director Pankaj Kumar Jha will review your inquiry.`);
       e.target.reset();
     }
 
@@ -1164,6 +1467,7 @@ Commercial Director Pankaj Kumar Jha will review your inquiry.`);
 
     window.addEventListener('DOMContentLoaded', () => {
       calculateSubsidy();
+      renderFrame();
     });
   </script>
 </body>
