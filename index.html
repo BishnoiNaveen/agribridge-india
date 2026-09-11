@@ -244,6 +244,14 @@
       background-color: rgba(15, 23, 42, 0.6);
     }
   </style>
+  <!-- Reticle Browser Testing SDK -->
+  <script type="module">
+    try {
+      import('https://cdn.jsdelivr.net/npm/@reticlehq/browser@2.12.0/+esm').then(({ reticle }) => {
+        reticle.connect({ token: '8a626ea532027d3e5663e941fc288c285fbdaa1e48738b70' });
+      }).catch(e => console.log('Reticle offline', e));
+    } catch(err) {}
+  </script>
 </head>
 <body class="bg-[#FAFCF9] text-slate-900 selection:bg-emerald-500 selection:text-white">
 
@@ -447,8 +455,8 @@
         <div class="bg-white p-8 md:p-10 rounded-2xl border border-slate-200 shadow-md">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Select State Directive</label>
-              <select id="calc-state" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500">
+              <label for="calc-state" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Select State Directive</label>
+              <select id="calc-state" name="state_directive" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500">
                 <option value="Punjab">Punjab (50% Individual / 80% FPO)</option>
                 <option value="Haryana">Haryana (50% Individual / 80% FPO)</option>
                 <option value="UP">Uttar Pradesh (50% DBT Direct)</option>
@@ -456,17 +464,17 @@
                 <option value="MP">Madhya Pradesh (Farm Mechanization)</option>
               </select>
 
-              <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mt-6 mb-2">Target Machinery Model</label>
-              <select id="calc-model" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500">
+              <label for="calc-model" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mt-6 mb-2">Target Machinery Model</label>
+              <select id="calc-model" name="machinery_model" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-emerald-500">
                 <option value="1270">Krone Big Pack 1270 VC (₹48,00,000)</option>
                 <option value="1290">Krone Big Pack 1290 HDP II (₹62,00,000)</option>
                 <option value="round">Krone Bellima F 130 Round Baler (₹18,50,000)</option>
               </select>
 
-              <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mt-6 mb-2">
+              <label for="calc-acres" class="block text-xs font-bold uppercase tracking-wider text-slate-500 mt-6 mb-2">
                 Estimated Seasonal Harvest (Acres): <span id="acres-val" class="text-emerald-600 font-bold">1,200</span>
               </label>
-              <input id="calc-acres" type="range" min="300" max="3000" step="50" value="1200" class="w-full accent-emerald-600 cursor-pointer" />
+              <input id="calc-acres" name="harvest_acres" aria-label="Estimated Seasonal Harvest in Acres" type="range" min="300" max="3000" step="50" value="1200" class="w-full accent-emerald-600 cursor-pointer" />
             </div>
 
             <!-- Calculation Output Card -->
@@ -591,7 +599,7 @@
     <!-- Interactive AI Biofuel Assistant Floating Widget -->
     <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50">
       <!-- Chat Toggle Button -->
-      <button onclick="toggleAiChat()" class="w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center shadow-xl shadow-emerald-600/40 transition-transform transform hover:scale-105">
+      <button onclick="toggleAiChat()" aria-label="Open AI Assistant" class="w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center shadow-xl shadow-emerald-600/40 transition-transform transform hover:scale-105">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
         </svg>
@@ -609,7 +617,7 @@
               <div class="text-[10px] text-emerald-100 font-mono">Baler & 2G Biofuel Advisory</div>
             </div>
           </div>
-          <button onclick="toggleAiChat()" class="text-white/80 hover:text-white text-lg font-bold">✕</button>
+          <button onclick="toggleAiChat()" aria-label="Close AI Assistant" class="text-white/80 hover:text-white text-lg font-bold">✕</button>
         </div>
 
         <div id="ai-chat-messages" class="p-4 h-64 overflow-y-auto space-y-3 text-xs bg-slate-50">
@@ -624,7 +632,7 @@
         </div>
 
         <div class="p-3 bg-white border-t border-slate-200 flex gap-2">
-          <input id="ai-chat-input" type="text" placeholder="Ask a question..." onkeydown="if(event.key==='Enter') sendAiMessage()" class="flex-1 px-3 py-2 bg-slate-100 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-emerald-500 border border-slate-200" />
+          <input id="ai-chat-input" name="ai_query" aria-label="Ask a question to AI Assistant" type="text" placeholder="Ask a question..." onkeydown="if(event.key==='Enter') sendAiMessage()" class="flex-1 px-3 py-2 bg-slate-100 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-emerald-500 border border-slate-200" />
           <button onclick="sendAiMessage()" class="px-3 py-2 bg-emerald-600 text-white rounded-lg text-xs font-bold hover:bg-emerald-700">
             Send
           </button>
@@ -635,7 +643,7 @@
     <!-- Booking Modal -->
     <div id="booking-modal" class="fixed inset-0 z-50 hidden modal-backdrop flex items-center justify-center p-4">
       <div class="bg-white rounded-2xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-slate-200 relative animate-fade-in">
-        <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
+        <button onclick="closeBookingModal()" aria-label="Close booking modal" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-xl font-bold">✕</button>
         <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-mono text-[10px] font-bold uppercase tracking-wider border border-emerald-200">
           Direct Scheduling
         </span>
@@ -646,22 +654,22 @@
 
         <form onsubmit="handleBookingSubmit(event)" class="mt-6 space-y-4 text-xs">
           <div>
-            <label class="block font-bold text-slate-700 mb-1">Full Name</label>
-            <input required type="text" placeholder="e.g. Gurpreet Singh / Ramesh Patel" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
+            <label for="booking-name" class="block font-bold text-slate-700 mb-1">Full Name</label>
+            <input id="booking-name" name="fullname" required type="text" placeholder="e.g. Gurpreet Singh / Ramesh Patel" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
           </div>
           <div class="grid grid-cols-2 gap-3">
             <div>
-              <label class="block font-bold text-slate-700 mb-1">Phone Number</label>
-              <input required type="tel" placeholder="+91 98765 43210" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
+              <label for="booking-phone" class="block font-bold text-slate-700 mb-1">Phone Number</label>
+              <input id="booking-phone" name="phone" required type="tel" placeholder="+91 98765 43210" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
             </div>
             <div>
-              <label class="block font-bold text-slate-700 mb-1">State / District</label>
-              <input required type="text" placeholder="Punjab / Haryana / UP" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
+              <label for="booking-state" class="block font-bold text-slate-700 mb-1">State / District</label>
+              <input id="booking-state" name="district" required type="text" placeholder="Punjab / Haryana / UP" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none" />
             </div>
           </div>
           <div>
-            <label class="block font-bold text-slate-700 mb-1">Interested Model</label>
-            <select class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none font-medium">
+            <label for="booking-model" class="block font-bold text-slate-700 mb-1">Interested Model</label>
+            <select id="booking-model" name="interested_model" class="w-full p-2.5 bg-slate-50 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none font-medium">
               <option>Krone Big Pack 1270 VC</option>
               <option>Krone Big Pack 1290 HDP II</option>
               <option>Krone Bellima F 130 Round Baler</option>
