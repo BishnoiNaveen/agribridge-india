@@ -53,30 +53,6 @@
               textSecondary: '#475569',
               textMuted: '#64748B',
             }
-          },
-          keyframes: {
-            floatSlow: {
-              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-              '50%': { transform: 'translateY(-10px) rotate(0.6deg)' },
-            },
-            floatReverse: {
-              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-              '50%': { transform: 'translateY(8px) rotate(-0.6deg)' },
-            },
-            flowStream: {
-              '0%': { backgroundPosition: '0% 50%' },
-              '100%': { backgroundPosition: '100% 50%' },
-            },
-            pulseGlow: {
-              '0%, 100%': { opacity: '0.9', transform: 'scale(1)' },
-              '50%': { opacity: '0.6', transform: 'scale(1.08)' },
-            }
-          },
-          animation: {
-            'float-slow': 'floatSlow 6s ease-in-out infinite',
-            'float-reverse': 'floatReverse 7s ease-in-out infinite',
-            'flow-stream': 'flowStream 10s linear infinite',
-            'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
           }
         }
       }
@@ -133,20 +109,6 @@
       backdrop-filter: blur(20px) saturate(180%);
       border: 1px solid rgba(226, 232, 240, 0.85);
       box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
-    }
-
-    /* Floating Glass Badge */
-    .glass-badge {
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.1), 0 1px 2px rgba(15, 23, 42, 0.05);
-    }
-
-    /* Energy Particle Stream */
-    .energy-stream {
-      background: linear-gradient(90deg, rgba(16, 185, 129, 0.4), rgba(245, 158, 11, 0.4), rgba(5, 150, 105, 0.4), rgba(16, 185, 129, 0.4));
-      background-size: 300% 100%;
     }
 
     /* Custom Chat Scrollbar */
@@ -222,15 +184,15 @@
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 2. CINEMATIC HERO & INTERACTIVE BIOFUEL TRANSFORMATION STAGE             -->
+  <!-- 2. CINEMATIC HERO & LIVING PANORAMA CANVAS (DAYLIGHT 60FPS DIORAMA)       -->
   <!-- ========================================================================= -->
   <section id="hero-stage" class="scroll-target relative z-10 pt-32 pb-16 md:pt-40 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     
     <!-- Hero Title & Narrative -->
-    <div class="text-center max-w-4xl mx-auto mb-10 space-y-4">
+    <div class="text-center max-w-4xl mx-auto mb-8 space-y-4">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-agri-200 text-xs font-semibold text-agri-800 shadow-sm">
         <span class="material-symbols-outlined text-base text-agri-600">eco</span>
-        <span>Zero Stubble Burning • High-Density Balers • 2G Clean Bio-Ethanol</span>
+        <span>Circular Green AgTech: From Crop Stubble to Clean 2G Biofuel</span>
       </div>
 
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-surface-textPrimary leading-[1.12] font-display">
@@ -243,128 +205,124 @@
       </p>
     </div>
 
-    <!-- THE DUAL-MOTION CINEMATIC STAGE CHASSIS -->
+    <!-- THE LIVING PANORAMA CHASSIS -->
     <div class="light-bezel relative">
       <div class="light-bezel-inner p-4 sm:p-8 space-y-6">
         
-        <!-- Interactive Stage Controller Header -->
+        <!-- Interactive Stage Header & Stage Buttons -->
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100">
-          <div class="flex items-center gap-3">
-            <span id="storyStepBadge" class="px-3 py-1 rounded-full bg-agri-700 text-white text-xs font-mono font-bold tracking-wider">
-              STAGE 01 / 03
-            </span>
-            <span id="storyMetricBadge" class="text-xs font-mono font-bold text-agri-800 bg-agri-100 px-3 py-1 rounded-full">
-              🌾 Tractor Baler Compaction (55–75 HP)
-            </span>
+          <div>
+            <div class="flex items-center gap-2">
+              <span id="storyStepBadge" class="px-3 py-1 rounded-full bg-agri-700 text-white text-xs font-mono font-bold tracking-wider">
+                STAGE 01 / 03
+              </span>
+              <span id="storyMetricBadge" class="text-xs font-mono font-bold text-agri-800 bg-agri-100 px-3 py-1 rounded-full">
+                🌾 Tractor Baler Compaction (55–75 HP)
+              </span>
+            </div>
+            <p class="text-xs text-surface-textMuted mt-1">Scroll or use the interactive timeline below to travel from field to refinery.</p>
           </div>
 
           <!-- Dual-Motion Status: Scroll + Continuous Ambient Flow -->
           <div class="flex items-center gap-3">
-            <div class="flex items-center gap-1.5 text-xs font-mono text-surface-textSecondary">
+            <div class="flex items-center gap-1.5 text-xs font-mono text-surface-textSecondary bg-slate-50 px-3 py-1.5 rounded-xl border border-slate-200">
               <span class="w-2.5 h-2.5 rounded-full bg-agri-500 animate-ping"></span>
-              <span id="motionStatusText">Scroll or Auto-Playing</span>
+              <span id="motionStatusText">60FPS Living Simulation Active</span>
             </div>
-            <button onclick="toggleStoryAutoPlay()" id="btnAutoPlayToggle" class="px-3 py-1 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-surface-textPrimary transition-colors">
-              Pause Auto-Flow
+            <button onclick="toggleDioramaAutoPlay()" id="btnAutoPlayToggle" class="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-surface-textPrimary transition-colors">
+              Pause Auto-Pan
             </button>
           </div>
         </div>
 
-        <!-- 3 Stage Scrubber Pills -->
+        <!-- 3 Stage Quick-Nav Pills -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-          <button onclick="setStoryStage(0)" id="stageBtn0" class="p-3.5 rounded-xl border-2 border-agri-600 bg-agri-50/70 text-left transition-all relative overflow-hidden group">
+          <button onclick="glideToStage(0)" id="stageBtn0" class="p-3.5 rounded-xl border-2 border-agri-600 bg-agri-50/70 text-left transition-all relative overflow-hidden group shadow-sm">
             <div class="flex items-center justify-between text-xs font-bold text-agri-700 mb-1">
-              <span>1. TRACTOR BALER IN FIELD</span>
+              <span>1. IN-FIELD TRACTOR BALER</span>
               <span class="material-symbols-outlined text-base">agriculture</span>
             </div>
-            <p class="text-[11px] text-surface-textSecondary">Picks up paddy straw; 100% stubble burning stopped.</p>
+            <p class="text-[11px] text-surface-textSecondary">Paddy straw pickup & compaction; 100% stubble burning stopped.</p>
             <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-200">
               <div id="progBar0" class="h-full bg-agri-600 transition-all duration-300" style="width: 100%;"></div>
             </div>
           </button>
 
-          <button onclick="setStoryStage(1)" id="stageBtn1" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group">
+          <button onclick="glideToStage(1)" id="stageBtn1" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group">
             <div class="flex items-center justify-between text-xs font-bold text-surface-textMuted mb-1">
               <span>2. BIOMASS LOGISTICS</span>
               <span class="material-symbols-outlined text-base">local_shipping</span>
             </div>
-            <p class="text-[11px] text-surface-textSecondary">High-density bales transported (15 Tons/Trailer).</p>
+            <p class="text-[11px] text-surface-textSecondary">High-density bales transported by trailer (15 Tons/Truckload).</p>
             <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-200">
               <div id="progBar1" class="h-full bg-amber-warm transition-all duration-300" style="width: 0%;"></div>
             </div>
           </button>
 
-          <button onclick="setStoryStage(2)" id="stageBtn2" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group">
+          <button onclick="glideToStage(2)" id="stageBtn2" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group">
             <div class="flex items-center justify-between text-xs font-bold text-surface-textMuted mb-1">
               <span>3. 2G BIOFUEL REFINERY</span>
               <span class="material-symbols-outlined text-base">factory</span>
             </div>
-            <p class="text-[11px] text-surface-textSecondary">Clean bio-ethanol (280 L/Ton) for green transport.</p>
+            <p class="text-[11px] text-surface-textSecondary">Clean bio-ethanol (280 L/Ton) synthesized for green mobility.</p>
             <div class="absolute bottom-0 left-0 right-0 h-1 bg-slate-200">
               <div id="progBar2" class="h-full bg-agri-700 transition-all duration-300" style="width: 0%;"></div>
             </div>
           </button>
         </div>
 
-        <!-- The Cinematic Video / Canvas Stage -->
-        <div class="relative rounded-2xl overflow-hidden bg-slate-950 text-white min-h-[460px] flex flex-col justify-between p-6 sm:p-10 shadow-xl border border-slate-800">
+        <!-- THE 60FPS LIVING PANORAMA CANVAS (DAYLIGHT RENDERING ENGINE) -->
+        <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-gradient-to-b from-sky-50 via-amber-50/20 to-emerald-50/40">
+          <canvas id="agriDiorama" width="1200" height="480" class="w-full h-[400px] sm:h-[480px] block cursor-ew-resize"></canvas>
           
-          <!-- Background Scene Media with Cross-Dissolve -->
-          <div id="storyVisualBg" class="absolute inset-0 bg-cover bg-center transition-all duration-700 scale-105 opacity-55"
-               style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpCoew6GDHe1QrRFcsts1hKbomuHgHpBpP7L8JhCseACqTPMR9WJrdQSF8-lv8w76R3nXgjtc8tmLEU9GYmr0A856wUKsdYLviRHBqR29SmrHVLY_QrRuv0hWzXI9ZQITnZS_y9Z72HR1aABAKop_x_o64AzqLI1THk_4-tK_BuzpS1nXaAsPXwNzWRRoFjoWF2iC-gyBCFUJU0NaIaSoRlTFweENoKD7lO0UEU482jfM-GgDkMLk8f3gmyliAt3rlIoBdbRVeH-4');">
-          </div>
-
-          <!-- HTML5 Video Layer (Auto-plays + Scrubs with Scroll) -->
-          <video id="heroVideo" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen pointer-events-none">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-combine-harvester-working-in-a-wheat-field-42460-large.mp4" type="video/mp4">
-          </video>
-          
-          <!-- Energy Stream Ambient Overlay -->
-          <div class="absolute inset-0 energy-stream opacity-25 animate-flow-stream mix-blend-screen pointer-events-none"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
-
-          <!-- Stage Overlay HUD Content -->
-          <div class="relative z-10 flex flex-wrap items-center justify-between gap-4">
-            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              <span id="hudBadge">CFMTTI Tested Machinery Active</span>
+          <!-- Floating Interactive HUD Overlay (Top-Left of Canvas) -->
+          <div class="absolute top-4 left-4 z-10 flex flex-col gap-2 pointer-events-none">
+            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 text-xs font-mono font-bold text-surface-textPrimary shadow-md">
+              <span class="w-2.5 h-2.5 rounded-full bg-agri-600 animate-ping"></span>
+              <span id="liveZoneBadge">FIELD ZONE: Tractor Baler Active</span>
             </div>
-
-            <div class="text-xs font-mono text-slate-300 flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-sm text-agri-400">verified</span>
-              <span>100% Smoke-Free Clear Skies</span>
+            <div class="px-3 py-1 rounded-xl bg-white/90 backdrop-blur-md border border-slate-200 text-[11px] font-mono text-agri-800 shadow-sm">
+              Live Bales Packed: <span id="liveBaleCounter" class="font-bold">142</span> Bales today
             </div>
           </div>
 
-          <!-- Central Descriptive Text -->
-          <div class="relative z-10 max-w-3xl space-y-3 my-auto py-8">
-            <h3 id="storyTitle" class="text-2xl sm:text-4xl font-extrabold text-white font-display tracking-tight leading-tight">
-              In-Field Baler Compaction: Eliminating Stubble Burning at the Source
-            </h3>
-            <p id="storyDescription" class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
-              Following harvest, high-density tractor balers compress loose paddy stubble into dense, uniform cylindrical and rectangular bales. Farmers no longer burn their fields, and the compressed biomass is channeled directly to 2G Bio-Ethanol plants.
-            </p>
+          <!-- Floating HUD Overlay (Top-Right of Canvas) -->
+          <div class="absolute top-4 right-4 z-10 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 text-xs font-mono font-bold text-agri-800 shadow-md pointer-events-none">
+            <span class="material-symbols-outlined text-sm text-agri-600">verified</span>
+            <span>100% Smoke-Free Clear Skies</span>
           </div>
 
-          <!-- Key Performance Indicators (Live HUD) -->
-          <div class="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10">
-            <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/10">
-              <div class="text-[11px] font-mono text-slate-400">COMPACTION THROUGHPUT</div>
-              <div id="stat1" class="text-xl font-bold text-white font-display">80–120 Bales/Hr</div>
-              <div class="text-[10px] text-slate-300">Rapid clearance for timely wheat sowing</div>
-            </div>
-            <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/10">
-              <div class="text-[11px] font-mono text-slate-400">FARMER REVENUE GAIN</div>
-              <div id="stat2" class="text-xl font-bold text-amber-warm font-display">₹4,500/Acre Profit</div>
-              <div class="text-[10px] text-slate-300">Direct sales to straw aggregators</div>
-            </div>
-            <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/10">
-              <div class="text-[11px] font-mono text-slate-400">2G BIOFUEL EQUIVALENT</div>
-              <div id="stat3" class="text-xl font-bold text-agri-400 font-display">280 Litres / Ton</div>
-              <div class="text-[10px] text-slate-300">Green E20 petrol blend feedstock</div>
-            </div>
+          <!-- Interactive Scrubber Bar (Bottom of Canvas) -->
+          <div class="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between gap-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-lg">
+            <span class="text-[11px] font-mono font-bold text-agri-800 hidden sm:inline">🌾 Field Baler</span>
+            <input type="range" id="dioramaScrubber" min="0" max="1000" value="0" oninput="handleScrubberInput(this.value)" 
+                   class="flex-1 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-agri-700"/>
+            <span class="text-[11px] font-mono font-bold text-agri-800 hidden sm:inline">⚡ 2G Biofuel Refinery</span>
           </div>
+        </div>
 
+        <!-- Metric KPI Summary Ribbons (Bottom of Stage) -->
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-2">
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 text-center">
+            <div class="text-[11px] font-mono text-surface-textMuted uppercase font-bold">Compaction Rate</div>
+            <div class="text-xl font-extrabold text-surface-textPrimary font-display mt-0.5">80–120 Bales/Hr</div>
+            <div class="text-[10px] text-surface-textSecondary">Rapid field clearing</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 text-center">
+            <div class="text-[11px] font-mono text-surface-textMuted uppercase font-bold">Stubble Burning</div>
+            <div class="text-xl font-extrabold text-agri-700 font-display mt-0.5">100% Eliminated</div>
+            <div class="text-[10px] text-surface-textSecondary">Zero parali smoke</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 text-center">
+            <div class="text-[11px] font-mono text-surface-textMuted uppercase font-bold">Farmer Net Profit</div>
+            <div class="text-xl font-extrabold text-amber-gold font-display mt-0.5">₹4,500 / Acre</div>
+            <div class="text-[10px] text-surface-textSecondary">Straw supply revenue</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-100 text-center">
+            <div class="text-[11px] font-mono text-surface-textMuted uppercase font-bold">2G Clean Bio-Ethanol</div>
+            <div class="text-xl font-extrabold text-agri-700 font-display mt-0.5">280 Litres / Ton</div>
+            <div class="text-[10px] text-surface-textSecondary">Green E20 petrol blend</div>
+          </div>
         </div>
 
       </div>
@@ -1090,132 +1048,500 @@
   </div>
 
   <!-- ========================================================================= -->
-  <!-- JAVASCRIPT: DUAL-MOTION ENGINE, SUBSIDY LOGIC, & AI CHATBOT SYSTEM       -->
+  <!-- JAVASCRIPT: 60FPS DIORAMA ENGINE, SUBSIDY LOGIC, & AI CHATBOT SYSTEM     -->
   <!-- ========================================================================= -->
   <script>
     // ---------------------------------------------------------------------------
-    // 1. DUAL-MOTION BIOFUEL STORY ENGINE (Scroll-Scrubbed + Continuous Flow)
+    // 1. 60FPS DAYLIGHT PANORAMIC DIORAMA ENGINE (Canvas Simulation)
     // ---------------------------------------------------------------------------
-    const storyStages = [
-      {
-        step: "STAGE 01 / 03",
-        metricBadge: "🌾 Tractor Baler Compaction (55–75 HP)",
-        hudBadge: "CFMTTI Tested Round Baler Active",
-        title: "In-Field Baler Compaction: Eliminating Stubble Burning at the Source",
-        desc: "Following harvest, high-density tractor balers compress loose paddy stubble into dense, uniform cylindrical and rectangular bales. Farmers no longer burn their fields, and the compressed biomass is channeled directly to 2G Bio-Ethanol plants.",
-        stat1: "80–120 Bales/Hr",
-        stat2: "₹4,500/Acre Profit",
-        stat3: "280 Litres / Ton",
-        bg: "https://lh3.googleusercontent.com/aida-public/AB6AXuDpCoew6GDHe1QrRFcsts1hKbomuHgHpBpP7L8JhCseACqTPMR9WJrdQSF8-lv8w76R3nXgjtc8tmLEU9GYmr0A856wUKsdYLviRHBqR29SmrHVLY_QrRuv0hWzXI9ZQITnZS_y9Z72HR1aABAKop_x_o64AzqLI1THk_4-tK_BuzpS1nXaAsPXwNzWRRoFjoWF2iC-gyBCFUJU0NaIaSoRlTFweENoKD7lO0UEU482jfM-GgDkMLk8f3gmyliAt3rlIoBdbRVeH-4"
-      },
-      {
-        step: "STAGE 02 / 03",
-        metricBadge: "🚛 Biomass Transport (15 Tons/Trailer)",
-        hudBadge: "Zero Moisture Spoilage Logistics",
-        title: "Biomass Logistics & Highway Aggregation: Rural Wealth Creation",
-        desc: "Standardized bales pack up to 15 tons per highway trailer. Custom Hiring Centers (CHCs) and rural aggregators dispatch daily shipments directly to energy depots, establishing a profitable permanent straw supply chain.",
-        stat1: "15 Tons / Truck",
-        stat2: "₹1,800–₹2,200/Ton",
-        stat3: "Zero Straw Loss",
-        bg: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1400&q=80"
-      },
-      {
-        step: "STAGE 03 / 03",
-        metricBadge: "⚡ 2G Bio-Ethanol & Clean Energy",
-        hudBadge: "IOCL Panipat & HPCL Bathinda Feedstock",
-        title: "2G Biofuel Synthesis: Powering Clean Mobility & Industry",
-        desc: "Straw is fermented at second-generation bio-ethanol refineries and CBG digestors. Every ton of straw yields 280 litres of clean ethanol, driving India's E20 green fuel mandate and ensuring completely smoke-free skies.",
-        stat1: "280 L Ethanol/Ton",
-        stat2: "100% Green E20 Blend",
-        stat3: "Zero Carbon Smoke",
-        bg: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=80"
-      }
+    const canvas = document.getElementById('agriDiorama');
+    const ctx = canvas ? canvas.getContext('2d') : null;
+
+    let dioramaProgress = 0; // 0.0 to 1.0 (from field -> logistics -> refinery)
+    let targetProgress = 0;
+    let autoPanActive = true;
+    let autoPanDirection = 1;
+    let frameCount = 0;
+    let balesPackedCount = 142;
+
+    // Particles array
+    const strawParticles = [];
+    for (let i = 0; i < 40; i++) {
+      strawParticles.push({
+        x: Math.random() * 400,
+        y: 280 + Math.random() * 100,
+        speed: 1.5 + Math.random() * 2,
+        size: 2 + Math.random() * 3
+      });
+    }
+
+    const biofuelDroplets = [];
+    for (let i = 0; i < 25; i++) {
+      biofuelDroplets.push({
+        x: 880 + Math.random() * 260,
+        y: 330,
+        speed: 2 + Math.random() * 2,
+        radius: 3 + Math.random() * 2
+      });
+    }
+
+    // Produced bales in field
+    const droppedBales = [
+      { x: 120, y: 360 },
+      { x: 260, y: 375 },
+      { x: 420, y: 365 }
     ];
 
-    let currentStoryStage = 0;
-    let storyAutoPlayActive = true;
-    let storyTimer = null;
+    function drawDiorama() {
+      if (!ctx || !canvas) return;
+      frameCount++;
 
-    function renderStoryStage(index) {
-      currentStoryStage = index;
-      const data = storyStages[index];
-
-      // Update Badges & Texts
-      document.getElementById('storyStepBadge').innerText = data.step;
-      document.getElementById('storyMetricBadge').innerText = data.metricBadge;
-      document.getElementById('hudBadge').innerText = data.hudBadge;
-      document.getElementById('storyTitle').innerText = data.title;
-      document.getElementById('storyDescription').innerText = data.desc;
-      document.getElementById('stat1').innerText = data.stat1;
-      document.getElementById('stat2').innerText = data.stat2;
-      document.getElementById('stat3').innerText = data.stat3;
-      document.getElementById('storyVisualBg').style.backgroundImage = `url('${data.bg}')`;
-
-      // Update Video time if video exists
-      const video = document.getElementById('heroVideo');
-      if (video && video.duration) {
-        video.currentTime = (index / 3) * video.duration;
-      }
-
-      // Update Button Styles & Progress Bars
-      for (let i = 0; i < 3; i++) {
-        const btn = document.getElementById('stageBtn' + i);
-        const prog = document.getElementById('progBar' + i);
-        if (i === index) {
-          btn.className = 'p-3.5 rounded-xl border-2 border-agri-600 bg-agri-50/70 text-left transition-all relative overflow-hidden group';
-          prog.style.width = '100%';
-        } else {
-          btn.className = 'p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group';
-          prog.style.width = '0%';
+      // Smooth camera interpolation towards target
+      if (autoPanActive) {
+        targetProgress += 0.0012 * autoPanDirection;
+        if (targetProgress >= 1.0) {
+          targetProgress = 1.0;
+          autoPanDirection = -1;
+        } else if (targetProgress <= 0.0) {
+          targetProgress = 0.0;
+          autoPanDirection = 1;
         }
       }
-    }
+      dioramaProgress += (targetProgress - dioramaProgress) * 0.08;
 
-    function setStoryStage(index) {
-      renderStoryStage(index);
-    }
+      // Update Scrubber Position
+      const scrubber = document.getElementById('dioramaScrubber');
+      if (scrubber && document.activeElement !== scrubber) {
+        scrubber.value = Math.round(dioramaProgress * 1000);
+      }
 
-    function nextStoryStage() {
-      const next = (currentStoryStage + 1) % storyStages.length;
-      renderStoryStage(next);
-    }
+      // Update UI Indicators
+      updateDioramaUI(dioramaProgress);
 
-    function startStoryAutoPlay() {
-      if (storyTimer) clearInterval(storyTimer);
-      storyTimer = setInterval(() => {
-        if (storyAutoPlayActive) {
-          nextStoryStage();
+      // Virtual world width is 1800, canvas visible width is 1200
+      const totalWorldWidth = 2000;
+      const cameraX = dioramaProgress * (totalWorldWidth - canvas.width);
+
+      ctx.save();
+      // Translate camera
+      ctx.translate(-cameraX, 0);
+
+      // Clear Canvas with Day Sky Gradient
+      const skyGrad = ctx.createLinearGradient(0, 0, 0, 320);
+      skyGrad.addColorStop(0, '#E0F2FE');
+      skyGrad.addColorStop(0.6, '#FEF3C7');
+      skyGrad.addColorStop(1, '#F0FDF4');
+      ctx.fillStyle = skyGrad;
+      ctx.fillRect(0, 0, totalWorldWidth, canvas.height);
+
+      // 1. Distant Sunlit Horizon & Green Hills
+      ctx.fillStyle = '#BBF7D0';
+      ctx.beginPath();
+      ctx.moveTo(0, 260);
+      for (let x = 0; x <= totalWorldWidth; x += 100) {
+        ctx.quadraticCurveTo(x + 50, 230 + Math.sin((x + frameCount) * 0.005) * 12, x + 100, 260);
+      }
+      ctx.lineTo(totalWorldWidth, canvas.height);
+      ctx.lineTo(0, canvas.height);
+      ctx.fill();
+
+      // 2. Soft Clouds
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
+      for (let c = 0; c < 5; c++) {
+        const cloudX = ((c * 400) + frameCount * 0.3) % (totalWorldWidth + 200) - 100;
+        ctx.beginPath();
+        ctx.arc(cloudX, 70 + (c % 2) * 30, 35, 0, Math.PI * 2);
+        ctx.arc(cloudX + 30, 60 + (c % 2) * 30, 45, 0, Math.PI * 2);
+        ctx.arc(cloudX + 70, 70 + (c % 2) * 30, 35, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      // 3. Ground Terrains:
+      // Zone A (0 to 800): Golden Crop Field
+      const fieldGrad = ctx.createLinearGradient(0, 300, 0, 480);
+      fieldGrad.addColorStop(0, '#FDE68A');
+      fieldGrad.addColorStop(0.5, '#F59E0B');
+      fieldGrad.addColorStop(1, '#D97706');
+      ctx.fillStyle = fieldGrad;
+      ctx.fillRect(0, 300, 850, 180);
+
+      // Crop Stubble Rows Pattern
+      ctx.strokeStyle = '#B45309';
+      ctx.lineWidth = 1.5;
+      for (let r = 320; r < 470; r += 16) {
+        ctx.beginPath();
+        ctx.moveTo(0, r);
+        ctx.lineTo(840, r);
+        ctx.stroke();
+      }
+
+      // Zone B (800 to 1350): Highway Asphalt Road
+      ctx.fillStyle = '#475569';
+      ctx.fillRect(800, 310, 550, 170);
+      // Road Shoulder & Markings
+      ctx.fillStyle = '#94A3B8';
+      ctx.fillRect(800, 310, 550, 6);
+      ctx.strokeStyle = '#FFFFFF';
+      ctx.setLineDash([30, 25]);
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(800, 395);
+      ctx.lineTo(1350, 395);
+      ctx.stroke();
+      ctx.setLineDash([]); // reset
+
+      // Zone C (1300 to 2000): Modern Clean Biofuel Industrial Platform
+      const indGrad = ctx.createLinearGradient(1300, 310, 2000, 310);
+      indGrad.addColorStop(0, '#E2E8F0');
+      indGrad.addColorStop(1, '#F8FAFC');
+      ctx.fillStyle = indGrad;
+      ctx.fillRect(1300, 310, 700, 170);
+
+      // -------------------------------------------------------------
+      // 4. DRAW ZONE A: TRACTOR & BALER IN FIELD
+      // -------------------------------------------------------------
+      const tractorX = 320 + Math.sin(frameCount * 0.02) * 15;
+      const tractorY = 325;
+
+      // Draw Dropped Bales behind Baler
+      droppedBales.forEach(b => {
+        ctx.fillStyle = '#D97706';
+        ctx.beginPath();
+        ctx.roundRect(b.x, b.y, 42, 32, 8);
+        ctx.fill();
+        ctx.strokeStyle = '#78350F';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        // Inner spiral twine
+        ctx.beginPath();
+        ctx.arc(b.x + 21, b.y + 16, 8, 0, Math.PI * 1.5);
+        ctx.stroke();
+      });
+
+      // Tractor Rear Large Wheel
+      ctx.fillStyle = '#1E293B';
+      ctx.beginPath();
+      ctx.arc(tractorX + 90, tractorY + 65, 36, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#F59E0B'; // Yellow rim
+      ctx.lineWidth = 5;
+      ctx.stroke();
+
+      // Tractor Front Wheel
+      ctx.fillStyle = '#1E293B';
+      ctx.beginPath();
+      ctx.arc(tractorX + 175, tractorY + 75, 24, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#F59E0B';
+      ctx.lineWidth = 4;
+      ctx.stroke();
+
+      // Tractor Hood & Engine Body (Green AgTech)
+      ctx.fillStyle = '#15803D';
+      ctx.beginPath();
+      ctx.roundRect(tractorX + 115, tractorY + 35, 75, 45, [4, 16, 4, 4]);
+      ctx.fill();
+
+      // Tractor Cab (Glass & Pillars)
+      ctx.fillStyle = '#0F172A';
+      ctx.fillRect(tractorX + 65, tractorY - 15, 55, 60);
+      ctx.fillStyle = '#93C5FD'; // Glass
+      ctx.fillRect(tractorX + 70, tractorY - 10, 45, 35);
+
+      // Exhaust Pipe with clean steam
+      ctx.fillStyle = '#475569';
+      ctx.fillRect(tractorX + 155, tractorY + 5, 6, 32);
+      ctx.fillStyle = 'rgba(255,255,255,0.6)';
+      ctx.beginPath();
+      ctx.arc(tractorX + 158, tractorY - 2 - (frameCount % 20), 6 + (frameCount % 10) * 0.4, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Hitch Connection
+      ctx.strokeStyle = '#334155';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(tractorX + 65, tractorY + 65);
+      ctx.lineTo(tractorX + 35, tractorY + 65);
+      ctx.stroke();
+
+      // Round Baler Body (Yellow/Green Machine)
+      ctx.fillStyle = '#EAB308';
+      ctx.beginPath();
+      ctx.roundRect(tractorX - 60, tractorY + 15, 95, 70, [20, 20, 10, 10]);
+      ctx.fill();
+      ctx.strokeStyle = '#CA8A04';
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      // Baler Brand Label
+      ctx.fillStyle = '#064E3B';
+      ctx.font = 'bold 11px monospace';
+      ctx.fillText('CR-800 BALER', tractorX - 52, tractorY + 45);
+
+      // Baler Wheels
+      ctx.fillStyle = '#1E293B';
+      ctx.beginPath();
+      ctx.arc(tractorX - 10, tractorY + 82, 22, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Baler Pickup Reel (Rotating tines picking up straw)
+      ctx.strokeStyle = '#78350F';
+      ctx.lineWidth = 2.5;
+      const angle = frameCount * 0.15;
+      ctx.beginPath();
+      ctx.arc(tractorX + 25, tractorY + 84, 14, angle, angle + Math.PI);
+      ctx.stroke();
+
+      // Straw flying into baler
+      strawParticles.forEach(p => {
+        p.x += p.speed;
+        if (p.x > tractorX + 25) {
+          p.x = tractorX - 180 + Math.random() * 50;
         }
-      }, 5500);
+        ctx.fillStyle = '#FEF08A';
+        ctx.fillRect(p.x, p.y, p.size, 2);
+      });
+
+      // -------------------------------------------------------------
+      // 5. DRAW ZONE B: BIOMASS LOGISTICS TRUCK
+      // -------------------------------------------------------------
+      const truckX = 940 + Math.sin(frameCount * 0.015) * 20;
+      const truckY = 325;
+
+      // Trailer Bed
+      ctx.fillStyle = '#334155';
+      ctx.fillRect(truckX - 90, truckY + 45, 175, 14);
+
+      // Stacked Straw Bales on Trailer
+      ctx.fillStyle = '#D97706';
+      for (let col = 0; col < 4; col++) {
+        for (let row = 0; row < 2; row++) {
+          ctx.beginPath();
+          ctx.roundRect(truckX - 85 + col * 38, truckY - 12 + row * 28, 34, 25, 4);
+          ctx.fill();
+          ctx.strokeStyle = '#92400E';
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+        }
+      }
+
+      // Trailer Wheels
+      ctx.fillStyle = '#0F172A';
+      for (let w = 0; w < 3; w++) {
+        ctx.beginPath();
+        ctx.arc(truckX - 65 + w * 45, truckY + 72, 16, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#94A3B8';
+        ctx.beginPath();
+        ctx.arc(truckX - 65 + w * 45, truckY + 72, 6, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = '#0F172A';
+      }
+
+      // Truck Cab (Clean White Modern Freightliner)
+      ctx.fillStyle = '#FFFFFF';
+      ctx.beginPath();
+      ctx.roundRect(truckX + 90, truckY + 5, 55, 65, [10, 14, 2, 2]);
+      ctx.fill();
+      ctx.strokeStyle = '#CBD5E1';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Truck Windshield
+      ctx.fillStyle = '#0284C7';
+      ctx.fillRect(truckX + 115, truckY + 12, 25, 24);
+
+      // Truck Cab Wheels
+      ctx.fillStyle = '#0F172A';
+      ctx.beginPath();
+      ctx.arc(truckX + 115, truckY + 72, 16, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Speed Trails
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(truckX - 110, truckY + 20);
+      ctx.lineTo(truckX - 140, truckY + 20);
+      ctx.moveTo(truckX - 100, truckY + 40);
+      ctx.lineTo(truckX - 130, truckY + 40);
+      ctx.stroke();
+
+      // -------------------------------------------------------------
+      // 6. DRAW ZONE C: 2G BIOFUEL & ETHANOL REFINERY
+      // -------------------------------------------------------------
+      const refX = 1480;
+      const refY = 160;
+
+      // Distillation Columns (Stainless Steel)
+      ctx.fillStyle = '#E2E8F0';
+      ctx.fillRect(refX, refY + 40, 45, 180);
+      ctx.fillRect(refX + 60, refY + 15, 50, 205);
+      ctx.fillRect(refX + 125, refY + 60, 40, 160);
+
+      // Rings on columns
+      ctx.strokeStyle = '#94A3B8';
+      ctx.lineWidth = 2;
+      for (let h = refY + 30; h < refY + 210; h += 25) {
+        ctx.beginPath();
+        ctx.moveTo(refX - 2, h);
+        ctx.lineTo(refX + 168, h);
+        ctx.stroke();
+      }
+
+      // Spherical Bio-Gas Digestor (Green dome)
+      ctx.fillStyle = '#047857';
+      ctx.beginPath();
+      ctx.arc(refX + 230, refY + 155, 55, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#10B981';
+      ctx.lineWidth = 4;
+      ctx.stroke();
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 11px monospace';
+      ctx.fillText('CBG / ETHANOL', refX + 195, refY + 158);
+
+      // Transparent Glass Biofuel Conduits / Pipelines
+      ctx.strokeStyle = 'rgba(2, 132, 199, 0.3)';
+      ctx.lineWidth = 14;
+      ctx.beginPath();
+      ctx.moveTo(refX + 85, refY + 220);
+      ctx.lineTo(refX + 85, refY + 260);
+      ctx.lineTo(refX + 350, refY + 260);
+      ctx.stroke();
+
+      // Glowing Biofuel Liquid Stream & Bubbles
+      ctx.strokeStyle = '#10B981';
+      ctx.lineWidth = 8;
+      ctx.beginPath();
+      ctx.moveTo(refX + 85, refY + 260);
+      ctx.lineTo(refX + 350, refY + 260);
+      ctx.stroke();
+
+      // Animated Biofuel Droplets
+      biofuelDroplets.forEach(d => {
+        d.x += d.speed;
+        if (d.x > refX + 350) d.x = refX + 85;
+        ctx.fillStyle = '#34D399';
+        ctx.beginPath();
+        ctx.arc(d.x, refY + 260, d.radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // Tanker Truck for Clean Fuel
+      ctx.fillStyle = '#059669';
+      ctx.beginPath();
+      ctx.roundRect(refX + 330, refY + 230, 110, 50, 14);
+      ctx.fill();
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 10px monospace';
+      ctx.fillText('2G BIO-ETHANOL', refX + 340, refY + 258);
+      ctx.fillText('E20 BLEND', refX + 355, refY + 270);
+
+      // Tanker Wheels
+      ctx.fillStyle = '#0F172A';
+      ctx.beginPath();
+      ctx.arc(refX + 355, refY + 288, 14, 0, Math.PI * 2);
+      ctx.arc(refX + 415, refY + 288, 14, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Clean Green Flame Icon on Top of Refinery
+      ctx.fillStyle = '#10B981';
+      ctx.beginPath();
+      ctx.arc(refX + 85, refY - 5, 12, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.restore();
+
+      requestAnimationFrame(drawDiorama);
     }
 
-    function toggleStoryAutoPlay() {
-      storyAutoPlayActive = !storyAutoPlayActive;
-      const btn = document.getElementById('btnAutoPlayToggle');
-      const statusText = document.getElementById('motionStatusText');
-      if (storyAutoPlayActive) {
-        btn.innerText = 'Pause Auto-Flow';
-        statusText.innerText = 'Scroll or Auto-Playing';
+    function updateDioramaUI(prog) {
+      const stepBadge = document.getElementById('storyStepBadge');
+      const metricBadge = document.getElementById('storyMetricBadge');
+      const liveZoneBadge = document.getElementById('liveZoneBadge');
+      const p0 = document.getElementById('progBar0');
+      const p1 = document.getElementById('progBar1');
+      const p2 = document.getElementById('progBar2');
+      const b0 = document.getElementById('stageBtn0');
+      const b1 = document.getElementById('stageBtn1');
+      const b2 = document.getElementById('stageBtn2');
+
+      if (prog < 0.35) {
+        stepBadge.innerText = 'STAGE 01 / 03';
+        metricBadge.innerText = '🌾 Tractor Baler Compaction (55–75 HP)';
+        liveZoneBadge.innerText = 'FIELD ZONE: Tractor Baler Active';
+        p0.style.width = '100%';
+        p1.style.width = '0%';
+        p2.style.width = '0%';
+        b0.className = 'p-3.5 rounded-xl border-2 border-agri-600 bg-agri-50/70 text-left transition-all relative overflow-hidden group shadow-sm';
+        b1.className = 'p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group';
+        b2.className = 'p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group';
+      } else if (prog < 0.7) {
+        stepBadge.innerText = 'STAGE 02 / 03';
+        metricBadge.innerText = '🚛 Biomass Logistics (15 Tons/Trailer)';
+        liveZoneBadge.innerText = 'HIGHWAY ZONE: Biomass Fleet en route';
+        p0.style.width = '100%';
+        p1.style.width = '100%';
+        p2.style.width = '0%';
+        b0.className = 'p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group';
+        b1.className = 'p-3.5 rounded-xl border-2 border-amber-warm bg-amber-soft/60 text-left transition-all relative overflow-hidden group shadow-sm';
+        b2.className = 'p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group';
       } else {
-        btn.innerText = 'Resume Auto-Flow';
-        statusText.innerText = 'Manual Scrub Active';
+        stepBadge.innerText = 'STAGE 03 / 03';
+        metricBadge.innerText = '⚡ 2G Bio-Ethanol Refinery (280 L/Ton)';
+        liveZoneBadge.innerText = 'REFINERY ZONE: Biofuel Synthesis Active';
+        p0.style.width = '100%';
+        p1.style.width = '100%';
+        p2.style.width = '100%';
+        b0.className = 'p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group';
+        b1.className = 'p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group';
+        b2.className = 'p-3.5 rounded-xl border-2 border-agri-700 bg-agri-100 text-left transition-all relative overflow-hidden group shadow-sm';
       }
     }
 
-    // Scroll-Scrubbing Listener
+    function glideToStage(stageIndex) {
+      autoPanActive = false;
+      document.getElementById('btnAutoPlayToggle').innerText = 'Resume Auto-Pan';
+      document.getElementById('motionStatusText').innerText = 'Manual Glide Active';
+      if (stageIndex === 0) targetProgress = 0.05;
+      if (stageIndex === 1) targetProgress = 0.50;
+      if (stageIndex === 2) targetProgress = 0.95;
+    }
+
+    function handleScrubberInput(val) {
+      autoPanActive = false;
+      targetProgress = parseInt(val) / 1000;
+      document.getElementById('btnAutoPlayToggle').innerText = 'Resume Auto-Pan';
+      document.getElementById('motionStatusText').innerText = 'Scrubber Active';
+    }
+
+    function toggleDioramaAutoPlay() {
+      autoPanActive = !autoPanActive;
+      const btn = document.getElementById('btnAutoPlayToggle');
+      const txt = document.getElementById('motionStatusText');
+      if (autoPanActive) {
+        btn.innerText = 'Pause Auto-Pan';
+        txt.innerText = '60FPS Living Simulation Active';
+      } else {
+        btn.innerText = 'Resume Auto-Pan';
+        txt.innerText = 'Manual Control Active';
+      }
+    }
+
+    // Scroll-Linked Scrubbing Listener
     window.addEventListener('scroll', () => {
       const section = document.getElementById('hero-stage');
       if (!section) return;
       const rect = section.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Advance stages proportionally as user scrolls through the hero stage
-      if (rect.top <= windowHeight * 0.4 && rect.bottom >= windowHeight * 0.3) {
+      if (rect.top <= windowHeight * 0.35 && rect.bottom >= windowHeight * 0.25) {
         const totalHeight = rect.height;
-        const progress = Math.max(0, Math.min(1, (windowHeight * 0.4 - rect.top) / totalHeight));
-        const stageIndex = Math.min(2, Math.floor(progress * 3));
-        if (stageIndex !== currentStoryStage && !storyAutoPlayActive) {
-          renderStoryStage(stageIndex);
+        const scrollFraction = Math.max(0, Math.min(1, (windowHeight * 0.35 - rect.top) / totalHeight));
+        if (!autoPanActive) {
+          targetProgress = scrollFraction;
         }
       }
     });
@@ -1507,8 +1833,7 @@
 
     // Initialize all components on DOM Load
     window.addEventListener('DOMContentLoaded', () => {
-      renderStoryStage(0);
-      startStoryAutoPlay();
+      drawDiorama();
       updateSubsidyCalculation();
     });
   </script>
