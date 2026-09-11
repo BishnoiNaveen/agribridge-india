@@ -226,7 +226,7 @@
       <!-- Action Group -->
       <div class="flex items-center gap-3">
         <!-- AI Assistant Launch Pill -->
-        <button onclick="toggleChatBot()" aria-label="Open AI Assistant" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-agri-50 border border-agri-200 text-agri-800 hover:bg-agri-100 text-xs font-bold font-mono transition-all">
+        <button onclick="toggleChatBot()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-agri-50 border border-agri-200 text-agri-800 hover:bg-agri-100 text-xs font-bold font-mono transition-all">
           <span class="material-symbols-outlined text-sm text-agri-600">smart_toy</span>
           <span class="hidden sm:inline">ASK AI</span>
         </button>
@@ -242,6 +242,7 @@
     </header>
   </div>
 
+  <main id="main-content">
   <!-- ========================================================================= -->
   <!-- 2. CINEMATIC HERO & INTERACTIVE BIOFUEL TRANSFORMATION STAGE             -->
   <!-- ========================================================================= -->
@@ -285,7 +286,7 @@
               <span class="w-2.5 h-2.5 rounded-full bg-agri-500 animate-ping"></span>
               <span id="motionStatusText">Scroll or Auto-Playing</span>
             </div>
-            <button onclick="toggleStoryAutoPlay()" id="btnAutoPlayToggle" aria-label="Toggle story auto play" class="px-3 py-1 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-surface-textPrimary transition-colors">
+            <button onclick="toggleStoryAutoPlay()" id="btnAutoPlayToggle" class="px-3 py-1 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-surface-textPrimary transition-colors">
               Pause Auto-Flow
             </button>
           </div>
@@ -293,7 +294,7 @@
 
         <!-- 3 Stage Scrubber Pills -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-          <button onclick="setStoryStage(0)" id="stageBtn0" aria-label="Stage 1 In-field Baler Compaction" class="p-3.5 rounded-xl border-2 border-agri-600 bg-agri-50/70 text-left transition-all relative overflow-hidden group">
+          <button onclick="setStoryStage(0)" id="stageBtn0" class="p-3.5 rounded-xl border-2 border-agri-600 bg-agri-50/70 text-left transition-all relative overflow-hidden group">
             <div class="flex items-center justify-between text-xs font-bold text-agri-700 mb-1">
               <span>1. TRACTOR BALER IN FIELD</span>
               <span class="material-symbols-outlined text-base">agriculture</span>
@@ -304,7 +305,7 @@
             </div>
           </button>
 
-          <button onclick="setStoryStage(1)" id="stageBtn1" aria-label="Stage 2 Biomass Highway Logistics" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group">
+          <button onclick="setStoryStage(1)" id="stageBtn1" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group">
             <div class="flex items-center justify-between text-xs font-bold text-surface-textMuted mb-1">
               <span>2. BIOMASS LOGISTICS</span>
               <span class="material-symbols-outlined text-base">local_shipping</span>
@@ -315,7 +316,7 @@
             </div>
           </button>
 
-          <button onclick="setStoryStage(2)" id="stageBtn2" aria-label="Stage 3 2G Biofuel Refinery" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group">
+          <button onclick="setStoryStage(2)" id="stageBtn2" class="p-3.5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 text-left transition-all relative overflow-hidden group">
             <div class="flex items-center justify-between text-xs font-bold text-surface-textMuted mb-1">
               <span>3. 2G BIOFUEL REFINERY</span>
               <span class="material-symbols-outlined text-base">factory</span>
@@ -360,9 +361,9 @@
 
           <!-- Central Descriptive Text -->
           <div class="relative z-10 max-w-3xl space-y-3 my-auto py-8">
-            <h3 id="storyTitle" class="text-2xl sm:text-4xl font-extrabold text-white font-display tracking-tight leading-tight">
+            <h2 id="storyTitle" class="text-2xl sm:text-4xl font-extrabold text-white font-display tracking-tight leading-tight">
               In-Field Baler Compaction: Eliminating Stubble Burning at the Source
-            </h3>
+            </h2>
             <p id="storyDescription" class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
               Following harvest, high-density tractor balers compress loose paddy stubble into dense, uniform cylindrical and rectangular bales. Farmers no longer burn their fields, and the compressed biomass is channeled directly to 2G Bio-Ethanol plants.
             </p>
@@ -595,7 +596,7 @@
           <div class="h-56 overflow-hidden relative bg-slate-100">
             <img src="assets/images/stage1_baler_4k.webp" 
                  alt="High Density Round Baler" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
-            <div class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full bg-amber-warm text-white font-mono text-[11px] font-bold shadow-md">
+            <div class="absolute top-3.5 right-3.5 px-3 py-1 rounded-full bg-slate-900 text-amber-300 font-mono text-[11px] font-bold shadow-md border border-slate-700">
               UP TO 50% SUBSIDY
             </div>
             <div class="absolute bottom-3.5 left-3.5 px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-md text-surface-textPrimary font-mono text-[11px] font-bold shadow-sm">
@@ -988,6 +989,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ========================================================================= -->
   <!-- 7. FOOTER & INSTITUTIONAL CREDENTIALS                                     -->
