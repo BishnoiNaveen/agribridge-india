@@ -753,7 +753,7 @@
               <label for="calcMachine" class="block text-xs font-mono text-surface-textMuted uppercase tracking-wider mb-2 font-bold">
                 1. Select Equipment Model
               </label>
-              <select id="calcMachine" onchange="updateSubsidyCalculation()" class="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200 text-surface-textPrimary text-sm font-semibold focus:border-agri-600 focus:bg-white focus:outline-none transition-all">
+              <select id="calcMachine" aria-label="Select Equipment Model" onchange="updateSubsidyCalculation()" class="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200 text-surface-textPrimary text-sm font-semibold focus:border-agri-600 focus:bg-white focus:outline-none transition-all">
                 <option value="1250000" selected>CR-800 High Density Round Baler — ₹12,50,000</option>
                 <option value="3200000">CR-1200 Large Square Baler — ₹32,00,000</option>
                 <option value="2100000">AgriTrack 90 Combine Harvester — ₹21,00,000</option>
@@ -767,15 +767,15 @@
                 2. Beneficiary Category (State DBT)
               </label>
               <div class="grid grid-cols-2 gap-3">
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:border-agri-500 transition-all">
-                  <input type="radio" name="subsidyRate" value="0.50" checked onchange="updateSubsidyCalculation()" class="w-4 h-4 text-agri-600 focus:ring-agri-500">
+                <label for="subsidy50" class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:border-agri-500 transition-all">
+                  <input type="radio" id="subsidy50" aria-label="Small / Marginal / SC / ST 50% DBT Grant" name="subsidyRate" value="0.50" checked onchange="updateSubsidyCalculation()" class="w-4 h-4 text-agri-600 focus:ring-agri-500">
                   <div>
                     <span class="block text-xs font-bold text-surface-textPrimary">Small / Marginal / SC / ST</span>
                     <span class="block text-[11px] font-mono text-agri-700 font-bold">50% DBT Grant</span>
                   </div>
                 </label>
-                <label class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:border-agri-500 transition-all">
-                  <input type="radio" name="subsidyRate" value="0.40" onchange="updateSubsidyCalculation()" class="w-4 h-4 text-agri-600 focus:ring-agri-500">
+                <label for="subsidy40" class="flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:border-agri-500 transition-all">
+                  <input type="radio" id="subsidy40" aria-label="General / Large Farmer / CHC 40% DBT Grant" name="subsidyRate" value="0.40" onchange="updateSubsidyCalculation()" class="w-4 h-4 text-agri-600 focus:ring-agri-500">
                   <div>
                     <span class="block text-xs font-bold text-surface-textPrimary">General / Large Farmer / CHC</span>
                     <span class="block text-[11px] font-mono text-amber-dark font-bold">40% DBT Grant</span>
@@ -888,7 +888,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label for="demoEquipment" class="block text-xs font-mono text-surface-textMuted uppercase font-bold mb-1.5">Equipment Required *</label>
-                <select id="demoEquipment" required class="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200 text-surface-textPrimary text-sm font-medium focus:border-agri-600 focus:bg-white focus:outline-none transition-all">
+                <select id="demoEquipment" aria-label="Select Implement / Baler Model" required class="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200 text-surface-textPrimary text-sm font-medium focus:border-agri-600 focus:bg-white focus:outline-none transition-all">
                   <option>CR-800 High Density Round Baler</option>
                   <option>CR-1200 Large Square Baler</option>
                   <option>AgriTrack 90 Combine Harvester</option>
@@ -897,7 +897,7 @@
               </div>
               <div>
                 <label for="demoState" class="block text-xs font-mono text-surface-textMuted uppercase font-bold mb-1.5">State & Agricultural Zone *</label>
-                <select id="demoState" required class="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200 text-surface-textPrimary text-sm font-medium focus:border-agri-600 focus:bg-white focus:outline-none transition-all">
+                <select id="demoState" aria-label="Operating State" required class="w-full h-12 px-4 rounded-xl bg-slate-50 border border-slate-200 text-surface-textPrimary text-sm font-medium focus:border-agri-600 focus:bg-white focus:outline-none transition-all">
                   <option>Punjab (Ludhiana, Sangrur, Bhatinda, Patiala)</option>
                   <option>Haryana (Karnal, Hisar, Sirsa, Fatehabad)</option>
                   <option>Rajasthan (Sri Ganganagar, Hanumangarh, Kota)</option>
